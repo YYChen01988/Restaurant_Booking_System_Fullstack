@@ -1,11 +1,16 @@
 package com.example.codeclan.bookingservice.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
 @javax.persistence.Table(name="tables")
 public class Table {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,10 +19,14 @@ public class Table {
     @Column(name="reserved")
     private boolean reserved;
 
-    public Table(int capacity, boolean reserved) {
+    @JsonIgnoreProperties("table")
+    @OneToMany(mappedBy = "table", fetch = FetchType.LAZY)
+    private List<Booking> bookings;
 
+    public Table(int capacity) {
         this.capacity = capacity;
         this.reserved = false;
+        this.bookings = new ArrayList<>();
     }
 
     public Table() {
@@ -45,5 +54,13 @@ public class Table {
 
     public void setReserved(boolean reserved) {
         this.reserved = reserved;
+    }
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
     }
 }

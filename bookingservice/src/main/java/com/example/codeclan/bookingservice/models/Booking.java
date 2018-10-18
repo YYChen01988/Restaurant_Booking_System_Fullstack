@@ -13,13 +13,14 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @Column(name="party")
     private int party;
     @Column(name="date")
-    private Date date;
+    private String date;
 
-    @Column(name="table")
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn (name = "table_id", nullable = false)
     private Table table;
 
     @JsonIgnore
@@ -28,7 +29,7 @@ public class Booking {
     private Customer customer;
 
 
-    public Booking(Customer customer, int party, Date date, Table table) {
+    public Booking(Customer customer, int party, String date, Table table) {
         this.customer = customer;
         this.party = party;
         this.date = date;
@@ -62,11 +63,11 @@ public class Booking {
         this.party = party;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -77,4 +78,5 @@ public class Booking {
     public void setTable(Table table) {
         this.table = table;
     }
+
 }
