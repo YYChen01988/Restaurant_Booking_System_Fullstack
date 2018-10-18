@@ -1,5 +1,7 @@
 package com.example.codeclan.bookingservice.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,14 +12,21 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="customer")
-    private Customer customer;
+
+
     @Column(name="party")
     private int party;
     @Column(name="date")
     private Date date;
+
     @Column(name="table")
     private Table table;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name="customer_id", nullable = false)
+    private Customer customer;
+
 
     public Booking(Customer customer, int party, Date date, Table table) {
         this.customer = customer;

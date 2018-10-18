@@ -1,7 +1,11 @@
 package com.example.codeclan.bookingservice.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="customers")
@@ -16,6 +20,11 @@ public class Customer {
     private int age;
     @Column(name="contact")
     private String contact;
+
+    @JsonIgnoreProperties("customer")
+    @OneToMany(mappedBy= "customer", fetch = FetchType.LAZY)
+    private List<Booking> bookings;
+
 //    private String comment;
 
 
@@ -23,9 +32,18 @@ public class Customer {
         this.name = name;
         this.age = age;
         this.contact = contact;
+        this.bookings = new ArrayList<>();
     }
 
     public Customer() {
+    }
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
     }
 
     public Long getId() {
