@@ -3,6 +3,7 @@ package com.example.codeclan.bookingservice.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -15,8 +16,10 @@ public class Booking {
 
     @Column(name="party")
     private int party;
-    @Column(name="date")
-    private String date;
+    @Column(name="start_time")
+    private LocalDateTime startTime;
+    @Column(name="endtime")
+    private LocalDateTime endtime;
 
     @JsonIgnore
     @ManyToOne
@@ -29,10 +32,11 @@ public class Booking {
     private Customer customer;
 
 
-    public Booking(Customer customer, int party, String date, Table table) {
+    public Booking(Customer customer, int party, LocalDateTime startTime, Table table) {
         this.customer = customer;
         this.party = party;
-        this.date = date;
+        this.startTime = startTime;
+        this.endtime = startTime.plusHours(2);
         this.table = table;
     }
 
@@ -63,12 +67,12 @@ public class Booking {
         this.party = party;
     }
 
-    public String getDate() {
-        return date;
+    public LocalDateTime getStartTime() {
+        return startTime;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
     }
 
     public Table getTable() {
@@ -79,4 +83,11 @@ public class Booking {
         this.table = table;
     }
 
+    public LocalDateTime getEndtime() {
+        return endtime;
+    }
+
+    public void setEndtime(LocalDateTime endtime) {
+        this.endtime = endtime;
+    }
 }
