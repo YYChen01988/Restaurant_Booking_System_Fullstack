@@ -36,10 +36,6 @@ public class DataLoader implements ApplicationRunner {
         LocalDateTime startTime1 = LocalDateTime.of(2018,10,19,16,30);
 
 
-//        String endTime1 = new String("11-10-18 12:30");
-//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(startTime1);
-//        startTime1 = simpleDateFormat.format(new Date());
-
         Customer customer1 = new Customer("Jobby McJobface", 30, "jobby@gmail.com");
         customerRepository.save(customer1);
 

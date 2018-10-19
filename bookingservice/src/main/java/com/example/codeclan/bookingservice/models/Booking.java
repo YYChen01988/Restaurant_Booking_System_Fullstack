@@ -18,8 +18,8 @@ public class Booking {
     private int party;
     @Column(name="start_time")
     private LocalDateTime startTime;
-    @Column(name="endtime")
-    private LocalDateTime endtime;
+    @Column(name="end_time")
+    private LocalDateTime endTime;
 
     @JsonIgnore
     @ManyToOne
@@ -36,7 +36,7 @@ public class Booking {
         this.customer = customer;
         this.party = party;
         this.startTime = startTime;
-        this.endtime = startTime.plusHours(2);
+        this.endTime = startTime.plusHours(2);
         this.table = table;
     }
 
@@ -84,10 +84,10 @@ public class Booking {
     }
 
     public LocalDateTime getEndtime() {
-        return endtime;
+        return endTime;
     }
 
-    public void setEndtime(LocalDateTime endtime) {
-        this.endtime = endtime;
+    public void setEndtime(LocalDateTime endTime) {
+        this.endTime = endTime;
     }
 }
