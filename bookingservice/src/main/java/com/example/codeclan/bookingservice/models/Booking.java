@@ -90,4 +90,9 @@ public class Booking {
     public void setEndtime(LocalDateTime endTime) {
         this.endTime = endTime;
     }
+
+    public void reserveTable(Table table){
+        table.setReserved(true);
+    }
+
 }

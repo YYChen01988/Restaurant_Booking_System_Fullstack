@@ -38,6 +38,10 @@ public class Customer {
     public Customer() {
     }
 
+    public void addBooking(Booking booking){
+        this.bookings.add(booking);
+    }
+
     public List<Booking> getBookings() {
         return bookings;
     }
