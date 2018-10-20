@@ -33,17 +33,15 @@ public class Table {
     }
 
     public void addBooking(Booking booking1){
-        if(this.bookings.size() > 0){
+        if(booking1.getParty() <= this.getCapacity()){
             for(Booking booking : this.bookings){
                 if(booking1.getStartTime().isAfter(booking.getEndtime())&&
                         booking1.getEndtime().isBefore(booking.getStartTime())){
-                    this.bookings.add(booking1);
-                    this.setReserved(true);
                 }
             }
+            this.bookings.add(booking1);
+            this.setReserved(true);
         }
-        this.bookings.add(booking1);
-        this.setReserved(true);
     }
 
     public Long getId() {
