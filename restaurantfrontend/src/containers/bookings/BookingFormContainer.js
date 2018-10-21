@@ -36,24 +36,23 @@ class BookingFormContainer extends Component {
     //   return <option key={index} value={booking._links.self.href}>{booking.name}</option>
     // })
 
-
     return (
-      <center>
+      <div className="form-container">
         <h1>Create Booking</h1>
-        <form className="form" onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="Name" name="name" required/>
-          <input type="number" placeholder="Age" name="age" min="12"/>
-          <input type="text" placeholder="Contact" name="contact" required/>
-          {/* <select name="booking">
+          <form className="form" onSubmit={this.handleSubmit}>
+            <input type="text" placeholder="Name" name="name" required/>
+            <input type="number" placeholder="Age" name="age" min="12"/>
+            <input type="text" placeholder="Contact" name="contact" required/>
+            {/* <select name="booking">
             {options}
           </select>
           <input type="date" name="" /> */}
           <button type="submit">Save</button>
         </form>
-      </center>
+      </div>
     )
   }
-
+  
 }
 
 export default BookingFormContainer;
