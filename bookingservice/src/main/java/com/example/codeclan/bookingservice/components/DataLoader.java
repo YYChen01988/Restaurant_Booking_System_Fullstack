@@ -33,7 +33,14 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args){
 
-        LocalDateTime startTime1 = LocalDateTime.of(2018,10,19,16,30);
+        LocalDateTime startTime1 = LocalDateTime.of(2018,10,25,16,30);
+        LocalDateTime startTime2 = LocalDateTime.of(2018,10,25,17,00);
+        LocalDateTime startTime3 = LocalDateTime.of(2018,10,25,19,00);
+        LocalDateTime startTime4 = LocalDateTime.of(2018,10,25,20,30);
+        LocalDateTime startTime5 = LocalDateTime.of(2018,10,25,21,00);
+        LocalDateTime startTime6 = LocalDateTime.of(2018,10,26,13,30);
+        LocalDateTime startTime7 = LocalDateTime.of(2018,10,26,14,00);
+        LocalDateTime startTime8 = LocalDateTime.of(2018,10,26,17,30);
 
 
         Customer customer1 = new Customer("Jobby McJobface", 30, "jobby@number2.com");
@@ -52,7 +59,7 @@ public class DataLoader implements ApplicationRunner {
         customerRepository.save(customer7);
         Customer customer8 = new Customer("Fraser Douglas", 37, "fdawg@nwa.co.uk");
         customerRepository.save(customer8);
-        Customer customer9 = new Customer("Jane Duncan", 45, "duncthesink@gitpumped.com");
+        Customer customer9 = new Customer("Jane Duncan", 45, "cssqueen@gitpumped.co.uk");
         customerRepository.save(customer9);
         Customer customer10 = new Customer("Kaspars Dzerins", 18, "grumpyrussian@fiery.ru");
         customerRepository.save(customer10);
@@ -118,7 +125,22 @@ public class DataLoader implements ApplicationRunner {
         Table table10 = new Table(10);
         tableRepository.save(table10);
 
-        Booking booking1 = new Booking(customer1, 1, startTime1, table1 );
+        Booking booking1 = new Booking(customer1, 2, startTime1, table1 );
         bookingRepository.save(booking1);
+        Booking booking2 = new Booking(customer2, 4, startTime2, table4 );
+        bookingRepository.save(booking2);
+        Booking booking3 = new Booking(customer3, 2, startTime3, table1 );
+        bookingRepository.save(booking3);
+        Booking booking4 = new Booking(customer4, 8, startTime4, table9 );
+        bookingRepository.save(booking4);
+        Booking booking5 = new Booking(customer5, 2, startTime5, table1 );
+        bookingRepository.save(booking5);
+        Booking booking6 = new Booking(customer6, 2, startTime6, table1 );
+        bookingRepository.save(booking6);
+        Booking booking7 = new Booking(customer7, 4, startTime7, table4 );
+        bookingRepository.save(booking7);
+        Booking booking8 = new Booking(customer8, 1, startTime8, table1 );
+        bookingRepository.save(booking8);
+
     }
 }

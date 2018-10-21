@@ -32,18 +32,34 @@ public class Table {
     public Table() {
     }
 
+
+    public boolean enoughSeats(Booking booking){
+        if (booking.getParty() <= this.capacity){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean notDoubeBooking(Booking booking1) {
+        for (Booking booking : this.bookings) {
+            if (booking1.getStartTime().isAfter(booking.getEndtime()) &&
+                    booking1.getEndtime().isBefore(booking.getStartTime()));
+            return true;
+        }
+        return false;
+    }
+
     public void addBooking(Booking booking1){
-        if(this.bookings.size() > 0){
+        if(enoughSeats(booking1) && this.bookings.size() < 0){
             for(Booking booking : this.bookings){
-                if(booking1.getStartTime().isAfter(booking.getEndtime())&&
-                        booking1.getEndtime().isBefore(booking.getStartTime())){
+                if(notDoubeBooking(booking1)){
                     this.bookings.add(booking1);
                     this.setReserved(true);
                 }
             }
+            this.bookings.add(booking1);
+            this.setReserved(true);
         }
-        this.bookings.add(booking1);
-        this.setReserved(true);
     }
 
     public Long getId() {
