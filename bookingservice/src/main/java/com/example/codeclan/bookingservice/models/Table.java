@@ -14,8 +14,13 @@ public class Table {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "table_number")
+    private int tableNumber;
+
     @Column(name="capacity")
     private int capacity;
+
     @Column(name="reserved")
     private boolean reserved;
 
@@ -23,7 +28,8 @@ public class Table {
     @OneToMany(mappedBy = "table", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 
-    public Table(int capacity) {
+    public Table(int tableNumber, int capacity) {
+        this.tableNumber = tableNumber;
         this.capacity = capacity;
         this.reserved = false;
         this.bookings = new ArrayList<>();
@@ -69,6 +75,14 @@ public class Table {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public int getTableNumber() {
+        return tableNumber;
+    }
+
+    public void setTableNumber(int tableNumber) {
+        this.tableNumber = tableNumber;
     }
 
     public int getCapacity() {

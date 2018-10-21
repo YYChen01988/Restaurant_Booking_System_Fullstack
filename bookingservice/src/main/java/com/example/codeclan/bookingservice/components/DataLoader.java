@@ -104,25 +104,25 @@ public class DataLoader implements ApplicationRunner {
         Customer customer30 = new Customer("Kevin Hart", 39, "kevin@betweenarockandahartplace.com");
         customerRepository.save(customer30);
 
-        Table table1 = new Table(2);
+        Table table1 = new Table(1, 2);
         tableRepository.save(table1);
-        Table table2 = new Table(2);
+        Table table2 = new Table(2, 2);
         tableRepository.save(table2);
-        Table table3 = new Table(2);
+        Table table3 = new Table(3, 2);
         tableRepository.save(table3);
-        Table table4 = new Table(4);
+        Table table4 = new Table(4, 4);
         tableRepository.save(table4);
-        Table table5 = new Table(4);
+        Table table5 = new Table(5, 4);
         tableRepository.save(table5);
-        Table table6 = new Table(4);
+        Table table6 = new Table(6, 4);
         tableRepository.save(table6);
-        Table table7 = new Table(6);
+        Table table7 = new Table(7, 6);
         tableRepository.save(table7);
-        Table table8 = new Table(6);
+        Table table8 = new Table(8, 6);
         tableRepository.save(table8);
-        Table table9 = new Table(8);
+        Table table9 = new Table(9, 8);
         tableRepository.save(table9);
-        Table table10 = new Table(10);
+        Table table10 = new Table(10, 10);
         tableRepository.save(table10);
 
         Booking booking1 = new Booking(customer1, 2, startTime1, table1 );
