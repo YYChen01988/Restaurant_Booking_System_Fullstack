@@ -44,7 +44,7 @@ public class BookingserviceApplicationTests {
 
         LocalDateTime startTime1 = LocalDateTime.of(2018,10,19,16,30);
         Customer customer1 = new Customer("Jobby McJobface", 30, "jobby@number2.com");
-        Table table1 = new Table(1);
+        Table table1 = new Table(1, 1);
         Booking booking1 = new Booking(customer1, 1, startTime1, table1 );
     }
 

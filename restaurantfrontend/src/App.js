@@ -14,6 +14,8 @@ class App extends Component {
         <React.Fragment >
           <NavBar/>
           <Switch>
+
+            {/* CUSTOMERS */}
             <Route exact path="/customers" render={() => {
               const url = "/customers";
               return <CustomerContainer url={url}/>
@@ -22,9 +24,21 @@ class App extends Component {
               const url = "/customers/" + props.match.params.id + "?projection=embedBooking"
               return <CustomerContainer url={url}/>
             }}/>
+
+            {/* BOOKINGS */}
             <Route exact path="/bookings" component={BookingContainer}/>
             <Route exact path="/bookings/new" component={BookingFormContainer}/>
-            <Route exact path="/tables" component={TableContainer}/>
+            <Route exact path="/bookings/:id" render={(props) => {
+              const url = "/bookings/" + props.match.params.id + "?projection=embedCustomer"
+              return <BookingContainer url={url}/>
+            }}/>
+
+            {/* TABLES */}
+            <Route exact path="/tables" render={() => {
+              const url = "/tables";
+              return <TableContainer url={url}/>
+            }}/>
+
           </Switch>
         </React.Fragment>
       </Router>

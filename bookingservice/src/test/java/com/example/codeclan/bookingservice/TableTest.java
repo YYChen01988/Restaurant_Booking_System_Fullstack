@@ -20,7 +20,7 @@ public class TableTest {
     public void before(){
         customer1 = new Customer("Alice", 34, "Alice@gmail.com");
         customer2 = new Customer("Bob", 42, "BOB@gmail.com");
-        table = new Table (4);
+        table = new Table (1, 4);
         LocalDateTime startTime1 = LocalDateTime.of(2018,10,19,16,30);
         LocalDateTime startTime2 = LocalDateTime.of(2018,10,19,18,00);
         LocalDateTime startTime3 = LocalDateTime.of(2018,10,19,19,00);
