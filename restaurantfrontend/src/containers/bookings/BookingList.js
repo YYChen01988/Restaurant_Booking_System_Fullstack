@@ -9,8 +9,6 @@ const BookingList = (props) => {
 	return (
 		<div className="booking-list">
 				<h1 className="heading">Bookings</h1>
-
-
 				<table className="booking-table">
 					<tbody>
 						<tr>

@@ -46,7 +46,9 @@ th, td {
   text-align: left;
   padding: 8px;
 }
-/* REMOVES UNDERLINE AND VISITED LINKS COLOUR */
+
+/* CHANGES ANCHOR LINK TO NORMAL */
+
 a {
     color: inherit;
     text-decoration: none;

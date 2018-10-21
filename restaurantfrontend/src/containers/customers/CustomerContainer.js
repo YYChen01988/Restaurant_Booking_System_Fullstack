@@ -19,10 +19,9 @@ class CustomerContainer extends Component {
         this.setState({customers: [data]})
       }
     })
-
   }
 
-  render() {
+  render(){
     return (
       <CustomerList customers={this.state.customers}/>
     )

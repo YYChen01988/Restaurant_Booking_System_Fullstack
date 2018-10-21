@@ -19,10 +19,9 @@ class TableContainer extends Component {
         this.setState({tables: [data]})
       }
     })
-
   }
 
-  render() {
+  render(){
     return (
       <TableList tables={this.state.tables}/>
     )
