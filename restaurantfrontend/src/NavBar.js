@@ -5,7 +5,7 @@ const NavBar = (props) => {
   return (
     <header>
       <ul className="topnav">
-        <li className="active">
+        <li>
           <Link to="/">Home</Link>
         </li>
         <li>
@@ -16,6 +16,9 @@ const NavBar = (props) => {
         </li>
         <li>
           <Link to="/customers">Customers</Link>
+        </li>
+        <li>
+          <Link to="/tables">Tables</Link>
         </li>
       </ul>
     </header>
