@@ -65,11 +65,11 @@ public class DataLoader implements ApplicationRunner {
         customerRepository.save(customer10);
         Customer customer11 = new Customer("Kirsty Bruce", 42, "thebruce@bruce.co.uk");
         customerRepository.save(customer11);
-        Customer customer12 = new Customer("Pim Groeneveld", 21, "groovemoves@catty.nl");
+        Customer customer12 = new Customer("Pim Groeneveld", 21, "groovymoves@catty.nl");
         customerRepository.save(customer12);
         Customer customer13 = new Customer("Ricky Corrigan", 26, "picklerick@c137.co.uk");
         customerRepository.save(customer13);
-        Customer customer14 = new Customer("Robert Deignan", 27, "rabd@revan.co.uk");
+        Customer customer14 = new Customer("Robert Deignan", 27, "darthrab@firstorder.co.uk");
         customerRepository.save(customer14);
         Customer customer15 = new Customer("Shannon Holmes", 35, "shanzyh@eget.ca");
         customerRepository.save(customer15);

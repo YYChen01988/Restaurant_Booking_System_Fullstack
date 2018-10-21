@@ -33,7 +33,7 @@ public class TableTest {
 
 
     }
-g
+
     @Test
     public void canCheckIfSeatIsEnough(){
         assertEquals(true, table.enoughSeats(booking1));
