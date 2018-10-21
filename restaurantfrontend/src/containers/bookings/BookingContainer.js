@@ -12,7 +12,6 @@ class BookingContainer extends Component {
     fetch('/bookings')
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       this.setState({bookings: data._embedded.bookings})
     })
   }

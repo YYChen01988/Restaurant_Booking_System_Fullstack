@@ -39,6 +39,7 @@ class BookingFormContainer extends Component {
 
     return (
       <center>
+        <h1>Create Booking</h1>
         <form className="form" onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Name" name="name" required/>
           <input type="number" placeholder="Age" name="age" min="12"/>

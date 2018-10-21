@@ -15,7 +15,7 @@ const BookingList = (props) => {
 					<tbody>
 						<tr>
 							<th>Customer</th>
-							<th>Party Size</th>
+							<th>People</th>
 							<th>Start Time</th>
 							<th>End Time</th>
 							<th>Table</th>
