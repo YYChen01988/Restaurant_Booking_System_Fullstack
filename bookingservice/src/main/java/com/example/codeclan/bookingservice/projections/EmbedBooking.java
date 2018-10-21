@@ -10,11 +10,12 @@ import java.util.List;
 
 @Projection(name = "embedBooking", types = Customer.class )
 public interface EmbedBooking {
+
     long getId();
-    Customer getCustomer();
-    int getParty();
-    LocalDateTime getStartTime();
-    LocalDateTime getEndTime();
-    Table getTable();
+    String getName();
+    int getAge();
+    String getContact();
+    List<Booking> getBookings();
+
 }
 
