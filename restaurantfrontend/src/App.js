@@ -12,16 +12,19 @@ class App extends Component {
     return (
       <Router>
         <React.Fragment >
-          <NavBar />
+          <NavBar/>
           <Switch>
             <Route exact path="/customers" render={() => {
               const url = "/customers";
               return <CustomerContainer url={url}/>
             }}/>
-
+            <Route exact path="/customers/:id" render={(props) => {
+              const url = "/customers/" + props.match.params.id + "?projection=embedBooking"
+              return <CustomerContainer url={url}/>
+            }}/>
             <Route exact path="/bookings" component={BookingContainer}/>
-            <Route exact path="/bookings/new" component={BookingFormContainer} />
-            <Route exact path="/tables" component={TableContainer} />
+            <Route exact path="/bookings/new" component={BookingFormContainer}/>
+            <Route exact path="/tables" component={TableContainer}/>
           </Switch>
         </React.Fragment>
       </Router>
