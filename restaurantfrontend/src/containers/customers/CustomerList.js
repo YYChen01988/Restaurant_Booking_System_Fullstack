@@ -4,16 +4,26 @@ import Customer from '../../components/customers/Customer'
 const CustomerList = (props) => {
 
 	const customers = props.customers.map((customer) => {
-	 	return (<li key={customer.id} className="component-item">
-			<Customer customer={customer} />
-		</li>
-	)
+	 	return <Customer customer={customer} key={customer.id}/>
 	})
 
 	return (
-		<ul className="component-list">
-			{customers}
-		</ul>
+		<div className="customer-list">
+        <h1 className="heading">Customers</h1>
+
+
+        <table className="customer-table">
+          <tbody>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Contact</th>
+              <th>Booking</th>
+            </tr>
+            {customers}
+          </tbody>
+        </table>
+      </div>
 	)
 }
 

@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import NavBar from './NavBar.js';
 import CustomerContainer from './containers/customers/CustomerContainer';
 import BookingContainer from './containers/bookings/BookingContainer';
+import TableContainer from './containers/tables/TableContainer';
 import BookingFormContainer from './containers/bookings/BookingFormContainer';
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
 
             <Route exact path="/bookings" component={BookingContainer}/>
             <Route exact path="/bookings/new" component={BookingFormContainer} />
+            <Route exact path="/tables" component={TableContainer} />
           </Switch>
         </React.Fragment>
       </Router>
