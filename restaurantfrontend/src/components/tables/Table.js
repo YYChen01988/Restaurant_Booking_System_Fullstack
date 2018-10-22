@@ -8,8 +8,6 @@ const Table = (props) => {
   //   return firstCharacter + restOfString;
   // }
 
-  const reserved = String(props.table.reserved);
-
   const url = "/tables/" + props.table.id
   return (
     <tr>
