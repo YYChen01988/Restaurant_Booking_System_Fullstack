@@ -9,7 +9,7 @@ const Customer = (props) => {
       <td>{props.customer.age}</td>
       <td>{props.customer.contact}</td>
       <td>Booking goes here</td>
-      {/* <td>{props.customer.bookings}</td> */}
+      {/* <td>{props.customer.bookings.table.tableNumber}</td> */}
     </tr>
   )
 }
