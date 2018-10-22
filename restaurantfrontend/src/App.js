@@ -38,6 +38,11 @@ class App extends Component {
               const url = "/tables";
               return <TableContainer url={url}/>
             }}/>
+            <Route exact path="/tables/:id" render={(props) => {
+              const url = "/tables/" + props.match.params.id + "?projection=embedBooking"
+              return <TableContainer url={url}/>
+            }}/>
+
 
           </Switch>
         </React.Fragment>

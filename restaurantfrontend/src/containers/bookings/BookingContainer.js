@@ -1,11 +1,20 @@
 import React, {Component} from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import moment from 'moment';
 import BookingList from './BookingList.js';
 
 class BookingContainer extends Component {
 
   constructor(props){
     super(props);
-    this.state = {bookings: []}
+    this.state = {bookings: [],
+    startDate: moment()};
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(date){
+    this.setState({ startDate: date});
   }
 
   componentDidMount(){
@@ -18,7 +27,13 @@ class BookingContainer extends Component {
 
   render() {
 		return (
-			<BookingList bookings={this.state.bookings} />
+      <div className="booking-date-filter">
+      <DatePicker
+        selected={this.state.startDate}
+        onChange={this.handleChange}
+      />
+			<BookingList bookings={this.state.bookings} filterDate={this.state.startDate}/>
+      </div>
 		)
 	}
 }

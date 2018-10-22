@@ -1,4 +1,6 @@
 import React from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 
 const Booking = (props) => {
@@ -9,13 +11,11 @@ const Booking = (props) => {
 
 	return (
 		<tr>
-			{/* <td>{props.booking.customer}</td> */}
-			<td>Customer goes here</td>
+			<td>{props.booking.customer.name}</td>
 			<td>{props.booking.party}</td>
 			<td>{formattedStartTime}</td>
 			<td>{formattedEndTime}</td>
-			<td>Table goes here</td>
-			{/* <td>{props.booking.table}</td> */}
+			<td>{props.booking.table.tableNumber}</td>
 		</tr>
 	)
 }

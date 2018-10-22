@@ -33,7 +33,7 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args){
 
-        LocalDateTime startTime1 = LocalDateTime.of(2018,10,25,16,30);
+        LocalDateTime startTime1 = LocalDateTime.of(2018,10,22,16,30);
         LocalDateTime startTime2 = LocalDateTime.of(2018,10,25,17,00);
         LocalDateTime startTime3 = LocalDateTime.of(2018,10,25,19,00);
         LocalDateTime startTime4 = LocalDateTime.of(2018,10,25,20,30);
@@ -49,7 +49,7 @@ public class DataLoader implements ApplicationRunner {
         customerRepository.save(customer2);
         Customer customer3 = new Customer("Anne Ince", 52, "anniebeats@java.com");
         customerRepository.save(customer3);
-        Customer customer4 = new Customer("Christian Geib", 32, "cgibblet@gurgles.de");
+        Customer customer4 = new Customer("Christian Geib", 32, "cgibblet@changelater.de");
         customerRepository.save(customer4);
         Customer customer5 = new Customer("Connie Leighton", 30, "constl@wewearpink.co.uk");
         customerRepository.save(customer5);

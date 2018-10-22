@@ -12,7 +12,7 @@ public class Table {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Id;
 
     @Column(name = "table_number")
     private int tableNumber;
@@ -59,7 +59,7 @@ public class Table {
             if (this.bookings.size() == 0){
                 this.bookings.add(booking1);
                 this.setReserved(true);
-            }else{
+            } else{
                 if(notDoubleBooking(booking1)){
                     this.bookings.add(booking1);
                     this.setReserved(true);
@@ -69,11 +69,11 @@ public class Table {
     }
 
     public Long getId() {
-        return id;
+        return Id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.Id = id;
     }
 
     public int getTableNumber() {
