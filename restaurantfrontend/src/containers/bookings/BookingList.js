@@ -1,10 +1,23 @@
 import React from 'react';
+import moment from 'moment';
 import Booking from '../../components/bookings/Booking'
 
 const BookingList = (props) => {
+	const formattedFilteredDate = moment(props.filterDate).format("DD-MM-YY")
+	console.log(formattedFilteredDate);
+	const bookingsDates = [];
 	const allBookings = props.bookings.map((booking) => {
 		return <Booking booking={booking} key={booking.id}/>
 	})
+
+	const selectedBooking = allBookings.filter((booking) => {
+		const filteredStartTime = moment(booking.props.booking.startTime).format("DD-MM-YY");
+		if (filteredStartTime === formattedFilteredDate) {
+			return <Booking booking={booking} key={booking.id}/>
+		}
+	})
+
+	console.log(selectedBooking);
 
 	return (
 		<div className="booking-list">
@@ -18,7 +31,7 @@ const BookingList = (props) => {
 							<th>End Time</th>
 							<th>Table</th>
 						</tr>
-						{allBookings}
+						{selectedBooking}
 					</tbody>
 				</table>
 			</div>

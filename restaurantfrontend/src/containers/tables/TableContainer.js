@@ -13,7 +13,6 @@ class TableContainer extends Component {
     fetch(this.url)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       if(data._embedded.tables){
         this.setState({tables: data._embedded.tables})
       } else {
