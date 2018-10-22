@@ -5,6 +5,7 @@ import CustomerContainer from './containers/customers/CustomerContainer';
 import BookingContainer from './containers/bookings/BookingContainer';
 import TableContainer from './containers/tables/TableContainer';
 import BookingFormContainer from './containers/bookings/BookingFormContainer';
+import EditBookingFormContainer from './containers/bookings/EditBookingFormContainer';
 
 class App extends Component {
 
@@ -32,6 +33,10 @@ class App extends Component {
               const url = "/bookings/" + props.match.params.id + "?projection=embedCustomer"
               return <BookingContainer url={url}/>
             }}/>
+            <Route exact path="/bookings/:id/edit" render={(props) => {
+              const url = "/bookings/" + props.match.params.id + "?projection=embedCustomer"
+              return <EditBookingFormContainer url={url}/>
+            }}/>
 
             {/* TABLES */}
             <Route exact path="/tables" render={() => {
@@ -42,7 +47,6 @@ class App extends Component {
               const url = "/tables/" + props.match.params.id + "?projection=embedBooking"
               return <TableContainer url={url}/>
             }}/>
-
 
           </Switch>
         </React.Fragment>

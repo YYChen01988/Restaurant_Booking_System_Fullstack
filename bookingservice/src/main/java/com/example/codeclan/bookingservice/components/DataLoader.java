@@ -33,7 +33,7 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args){
 
-        LocalDateTime startTime1 = LocalDateTime.of(2018,10,22,16,30);
+        LocalDateTime startTime1 = LocalDateTime.of(2018,10,23,16,30);
         LocalDateTime startTime2 = LocalDateTime.of(2018,10,25,17,00);
         LocalDateTime startTime3 = LocalDateTime.of(2018,10,25,19,00);
         LocalDateTime startTime4 = LocalDateTime.of(2018,10,25,20,30);
@@ -49,7 +49,7 @@ public class DataLoader implements ApplicationRunner {
         customerRepository.save(customer2);
         Customer customer3 = new Customer("Anne Ince", 52, "anniebeats@java.com");
         customerRepository.save(customer3);
-        Customer customer4 = new Customer("Christian Geib", 32, "cgibblet@changelater.de");
+        Customer customer4 = new Customer("Christian Geib", 32, "cgibblet@edna.de");
         customerRepository.save(customer4);
         Customer customer5 = new Customer("Connie Leighton", 30, "constl@wewearpink.co.uk");
         customerRepository.save(customer5);
@@ -71,7 +71,7 @@ public class DataLoader implements ApplicationRunner {
         customerRepository.save(customer13);
         Customer customer14 = new Customer("Robert Deignan", 27, "darthrab@firstorder.co.uk");
         customerRepository.save(customer14);
-        Customer customer15 = new Customer("Shannon Holmes", 35, "shanzyh@eget.ca");
+        Customer customer15 = new Customer("Shannon Holmes", 35, "noholmes@theinn.ca");
         customerRepository.save(customer15);
         Customer customer16 = new Customer("Sithara Sukumar", 20, "sithsuku@empire.in");
         customerRepository.save(customer16);
@@ -141,6 +141,8 @@ public class DataLoader implements ApplicationRunner {
         bookingRepository.save(booking7);
         Booking booking8 = new Booking(customer8, 1, startTime8, table1 );
         bookingRepository.save(booking8);
+        Booking booking9 = new Booking(customer1, 9, startTime8, table10 );
+        bookingRepository.save(booking9);
 
     }
 }

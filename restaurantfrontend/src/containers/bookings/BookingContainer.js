@@ -27,12 +27,11 @@ class BookingContainer extends Component {
 
   render() {
 		return (
-      <div className="booking-date-filter">
-      <DatePicker
-        selected={this.state.startDate}
-        onChange={this.handleChange}
-      />
-			<BookingList bookings={this.state.bookings} filterDate={this.state.startDate}/>
+      <div>
+        <div className="date-picker">
+          <DatePicker className="date-picker" selected={this.state.startDate} onChange={this.handleChange}/>
+        </div>
+			     <BookingList bookings={this.state.bookings} filterDate={this.state.startDate}/>
       </div>
 		)
 	}
