@@ -10,7 +10,7 @@ class BookingFormContainer extends Component {
       startDate: moment()};
       this.handleChange = this.handleChange.bind(this);
     }
-    
+
     handleChange(date){
       this.setState({ startDate: date});
     }
