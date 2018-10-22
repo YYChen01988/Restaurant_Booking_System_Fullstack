@@ -29,7 +29,7 @@ class BookingContainer extends Component {
 		return (
       <div>
         <div className="date-picker">
-          <DatePicker selected={this.state.startDate} onChange={this.handleChange}/>
+          <DatePicker className="date-picker" selected={this.state.startDate} onChange={this.handleChange}/>
         </div>
 			     <BookingList bookings={this.state.bookings} filterDate={this.state.startDate}/>
       </div>

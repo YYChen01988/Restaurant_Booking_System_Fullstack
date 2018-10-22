@@ -9,7 +9,7 @@ const NavBar = (props) => {
           <Link to="/">Home</Link>
         </li>
         <li className="dropdown">
-          <a className="dropbtn">Bookings<i class="fa fa-caret-down"></i></a>
+          <a href="javascript:void(0)" className="dropbtn">Bookings<i className="fa fa-caret-down"></i></a>
           <div className="dropdown-content">
             <Link to="/bookings">Bookings</Link>
             <Link to="/bookings/new">Create Booking</Link>

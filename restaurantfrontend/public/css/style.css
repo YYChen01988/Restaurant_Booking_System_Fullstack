@@ -105,7 +105,8 @@ th {
 
 .form-container {
   margin: auto;
-  width: 400px;
+  width: 300px;
+  text-align: center;
 }
 
 input[type=text], input[type=number], select {
@@ -126,7 +127,7 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
-button, input[type=submit], input[type=reset] {
+.button, input[type=submit], input[type=reset] {
   width: 100%;
   background-color: #4CAF50;
   color: white;

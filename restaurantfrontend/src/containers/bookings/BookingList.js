@@ -15,19 +15,19 @@ const BookingList = (props) => {
 		}
 	})
 
-	function handleFormDisplay(){
-		const form = document.querySelector('booking-form')
-		form.classList.remove("hidden");
-	}
-
-	const options = props.bookings.map((booking, index) => {
-		return <option key={index} value={booking._links.self.href}>{booking.name}</option>
-	})
+	// function handleFormDisplay(){
+	// 	const form = document.querySelector('booking-form')
+	// 	form.classList.remove("hidden");
+	// }
+	//
+	// const options = props.bookings.map((booking, index) => {
+	// 	return <option key={index} value={booking._links.self.href}>{booking.name}</option>
+	// })
 
 
 	return (
 		<div className="booking-list">
-			<button onClick={handleFormDisplay}>Create new booking</button>
+			{/* <button onClick={handleFormDisplay}>Create new booking</button>
 			<form id="booking-form" className="form-container">
 			<input type="text" placeholder="Name" name="name" required/>
 			<input type="number" placeholder="Age" name="age" min="12"/>
@@ -38,7 +38,7 @@ const BookingList = (props) => {
 		</select>
 		<input type="date" name=""/>
 		<button type="submit">Save</button>
-		</form>
+		</form> */}
 			<h1 className="heading">Bookings for {formattedFilteredDate}</h1>
 			<table className="booking-table">
 				<tbody>
