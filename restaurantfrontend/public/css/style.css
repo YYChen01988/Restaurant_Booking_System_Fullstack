@@ -139,6 +139,10 @@ input[type=submit]:hover {
   font-size: 18px;
 }
 
+input:focus::-webkit-input-placeholder {
+  color: #4CAF50;
+}
+
 /* DATE */
 
 .date-picker {
