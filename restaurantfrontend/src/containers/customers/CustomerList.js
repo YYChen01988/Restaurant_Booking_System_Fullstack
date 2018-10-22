@@ -2,7 +2,6 @@ import React from 'react';
 import Customer from '../../components/customers/Customer'
 
 const CustomerList = (props) => {
-console.log(props);
 if(!props.customers){
 	return null
 }
