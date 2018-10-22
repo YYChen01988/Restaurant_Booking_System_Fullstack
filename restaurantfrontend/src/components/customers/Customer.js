@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Customer = (props) => {
-
   const url = "/customers/" + props.customer.id
   return (
     <tr>
