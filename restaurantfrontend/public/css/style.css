@@ -53,11 +53,13 @@ li a:hover, .dropdown:hover .dropbtn {
 
 .fa {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal normal 14px/1;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin-left: 10px;
+
 }
 
 /* RESPONSIVE */
