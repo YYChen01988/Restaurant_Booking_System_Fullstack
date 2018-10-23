@@ -39,17 +39,16 @@ class BookingFormContainer extends Component {
       })
     }
 
-
     handleSubmit(event){
+      console.log(event.target.value);
       event.preventDefault();
       fetch("/bookings", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-          "name": event.target.customer.name.value,
+          "customer": event.target.customer.name.value,
           "age": event.target.customer.age.value,
           "contact": event.target.customer.contact.value,
-          // "booking": event.target.booking.value
         })
       }).then(() => {
         window.location = "/bookings";
@@ -58,11 +57,16 @@ class BookingFormContainer extends Component {
 
     handleInput(event){
       console.log(event.target.value);
-    }
+
+        }
 
     render() {
       const customerOptions = this.state.customers.map((customer, index) => {
-        return <option key={index} value={customer.name}></option>
+        return <option key={index} value={customer.name}>{customer.name}</option>
+      })
+
+      const customerData = this.state.customers.map((customer, index) => {
+        const option = <option key={index} value={customer}></option>
       })
 
       const tableOptions = this.state.tables.map((table, index) => {
@@ -71,6 +75,10 @@ class BookingFormContainer extends Component {
 
       function defaultDatePicker() {
         document.getElementById('datePicker').value = new Date().toDateInputValue();
+      }
+
+      function nameSelector() {
+        document.getElementById('customer-name')
       }
 
       return (
@@ -91,16 +99,20 @@ class BookingFormContainer extends Component {
           {/* <DatePicker className="date-picker" selected={this.state.startDate} onChange={this.handleChange} required/> */}
           <form className="form" onSubmit={this.handleSubmit}>
 
-            <input type="text" list="customers" onInput={this.handleInput}/>
-              <datalist id="customers">
-                {customerOptions}
-              </datalist>
+            {/* <input type="text" list="customers" onChange={this.handleInput}/>
+            <datalist id="customers">
+              {customerOptions}
+            </datalist> */}
 
-            <input type="text" placeholder="Name" name="name" required/>
-            <input type="number" placeholder="Age" name="age" min="15" required/>
-            <input type="text" placeholder="Contact" name="contact" required/>
+            {/* <input type="text" id="customer-name" placeholder="Name" name="name" required/>
+            <input type="number" id="customer-age" placeholder="Age" name="age" min="15" required/>
+            <input type="text" id="customer-contact" placeholder="Contact" name="contact" required/> */}
 
             {/* <input type="datetime-local" placeholder="DateTime" className="datetime" id="datePicker" required/> */}
+            <select name="customer" id="customer">
+              <option value="" disabled selected required>Select Customer</option>
+              {customerOptions}
+            </select>
             <select name="table" id="table">
               <option value="" disabled selected required>Select Table Number</option>
               {tableOptions}

@@ -9,21 +9,21 @@ class TableContainer extends Component {
   }
 
   componentDidMount(){
-    console.log(this.props.url);
     fetch(this.props.url)
     .then((res) => res.json())
     .then((data) => {
-      console.log('data', data);
-      if(data._embedded){
-        this.setState({tables: data._embedded.bookings})
-      } else {
+      if(!data._embedded){
         this.setState({tables: [data]})
+      } else if (!data._embedded.tables){
+                this.setState({tables: [data]})
+      }
+      else {
+        this.setState({tables: data._embedded.tables})
       }
     })
   }
 
   render(){
-    console.log('render', this.state);
     return (
       <TableList tables={this.state.tables}/>
     )

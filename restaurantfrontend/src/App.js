@@ -6,6 +6,7 @@ import BookingContainer from './containers/bookings/BookingContainer';
 import TableContainer from './containers/tables/TableContainer';
 import BookingFormContainer from './containers/bookings/BookingFormContainer';
 import EditBookingFormContainer from './containers/bookings/EditBookingFormContainer';
+import CustomerFormContainer from './containers/customers/CustomerFormContainer';
 
 class App extends Component {
 
@@ -21,6 +22,7 @@ class App extends Component {
               const url = "/customers";
               return <CustomerContainer url={url}/>
             }}/>
+            <Route exact path="/customers/new" component={CustomerFormContainer}/>
             <Route exact path="/customers/:id" render={(props) => {
               const url = "/customers/" + props.match.params.id + "?projection=embedBooking"
               return <CustomerContainer url={url}/>
