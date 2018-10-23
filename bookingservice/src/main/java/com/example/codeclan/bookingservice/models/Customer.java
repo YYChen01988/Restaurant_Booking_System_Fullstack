@@ -24,7 +24,6 @@ public class Customer {
     @Column(name="contact")
     private String contact;
 
-    @JsonIgnoreProperties("customer")
     @OneToMany(mappedBy= "customer", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 

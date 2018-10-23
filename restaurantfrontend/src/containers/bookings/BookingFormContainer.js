@@ -40,15 +40,16 @@ class BookingFormContainer extends Component {
     }
 
     handleSubmit(event){
-      console.log(event.target.value);
+      console.log(event.target.booking.startTime);
       event.preventDefault();
       fetch("/bookings", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-          "customer": event.target.customer.name.value,
-          "age": event.target.customer.age.value,
-          "contact": event.target.customer.contact.value,
+          "startTime": event.target.startTime.value,
+          "customer": event.target.customer.value,
+          "party": event.target.party.value,
+          "table": event.target.table.value
         })
       }).then(() => {
         window.location = "/bookings";
@@ -57,12 +58,11 @@ class BookingFormContainer extends Component {
 
     handleInput(event){
       console.log(event.target.value);
-
         }
 
     render() {
       const customerOptions = this.state.customers.map((customer, index) => {
-        return <option key={index} value={customer.name}>{customer.name}</option>
+        return <option key={index} value={customer._links.self.href}>{customer.name}</option>
       })
 
       const customerData = this.state.customers.map((customer, index) => {
@@ -113,6 +113,7 @@ class BookingFormContainer extends Component {
               <option value="" disabled selected required>Select Customer</option>
               {customerOptions}
             </select>
+            <input type="number" id="party" placeholder="Number of People" name="party" min="1" max="10" required/>
             <select name="table" id="table">
               <option value="" disabled selected required>Select Table Number</option>
               {tableOptions}

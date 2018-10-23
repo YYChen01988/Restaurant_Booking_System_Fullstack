@@ -23,7 +23,6 @@ public class Table {
     @Column(name="reserved")
     private boolean reserved;
 
-    @JsonIgnoreProperties("table")
     @OneToMany(mappedBy = "table", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 
