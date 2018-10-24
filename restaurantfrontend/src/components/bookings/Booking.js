@@ -8,9 +8,10 @@ const Booking = (props) => {
 	let date2 = new Date(props.booking.endTime);
 	let formattedEndTime = moment(date2).format("DD-MM-YY HH:mm")
 
+	const url = "/bookings/" + props.booking.id
 	return (
 		<tr>
-			<td>{props.booking.customer.name}</td>
+			<td><a href={url}>{props.booking.customer.name}</a></td>
 			<td>{props.booking.party}</td>
 			<td>{formattedStartTime}</td>
 			<td>{formattedEndTime}</td>
