@@ -2,6 +2,9 @@ import React from 'react';
 import Table from '../../components/tables/Table'
 
 const TableList = (props) => {
+	if(!props.tables){
+		return null
+	}
 
 	const tables = props.tables.map((table) => {
 		return <Table table={table} key={table.id}/>

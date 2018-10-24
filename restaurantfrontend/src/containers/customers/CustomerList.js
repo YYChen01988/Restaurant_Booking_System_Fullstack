@@ -2,9 +2,9 @@ import React from 'react';
 import Customer from '../../components/customers/Customer'
 
 const CustomerList = (props) => {
-if(!props.customers){
-	return null
-}
+	if(!props.customers){
+		return null
+	}
 	const customers = props.customers.map((customer) => {
 		return <Customer customer={customer} key={customer.id}/>
 	})

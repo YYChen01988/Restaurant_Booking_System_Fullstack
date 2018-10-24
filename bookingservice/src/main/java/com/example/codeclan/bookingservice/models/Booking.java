@@ -20,12 +20,12 @@ public class Booking {
     @Column(name="end_time")
     private LocalDateTime endTime;
 
-    @JsonIgnore
+//    @JsonIgnore
     @ManyToOne
     @JoinColumn (name = "table_id", nullable = false)
     private Table table;
 
-    @JsonIgnore
+//    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="customer_id", nullable = false)
     private Customer customer;

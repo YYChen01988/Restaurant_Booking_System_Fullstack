@@ -13,10 +13,13 @@ class CustomerContainer extends Component {
     fetch(this.url)
     .then((res) => res.json())
     .then((data) => {
-      if(data._embedded.customers){
-        this.setState({customers: data._embedded.customers})
-      } else {
+      if(!data._embedded){
         this.setState({customers: [data]})
+      } else if (!data._embedded.customers) {
+        this.setState({customers: [data]})
+      }
+      else {
+        this.setState({customers: data._embedded.customers})
       }
     })
   }

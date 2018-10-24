@@ -6,17 +6,19 @@ class TableContainer extends Component {
   constructor(props){
     super(props);
     this.state = {tables: []}
-    this.url = props.url;
   }
 
   componentDidMount(){
-    fetch(this.url)
+    fetch(this.props.url)
     .then((res) => res.json())
     .then((data) => {
-      if(data._embedded.tables){
-        this.setState({tables: data._embedded.tables})
-      } else {
+      if(!data._embedded){
         this.setState({tables: [data]})
+      } else if (!data._embedded.tables){
+                this.setState({tables: [data]})
+      }
+      else {
+        this.setState({tables: data._embedded.tables})
       }
     })
   }
