@@ -1,10 +1,10 @@
 package com.example.codeclan.bookingservice.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 @javax.persistence.Table(name="bookings")
@@ -12,7 +12,7 @@ public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Id;
 
     @Column(name="party")
     private int party;
@@ -21,22 +21,21 @@ public class Booking {
     @Column(name="end_time")
     private LocalDateTime endTime;
 
-    @JsonIgnore
+//    @JsonIgnoreProperties("table")
     @ManyToOne
     @JoinColumn (name = "table_id", nullable = false)
     private Table table;
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="customer_id", nullable = false)
     private Customer customer;
 
 
-    public Booking(Customer customer, int party, LocalDateTime startTime, Table table) {
+    public Booking(Customer customer, int party, LocalDateTime startTime, LocalDateTime endTime, Table table) {
         this.customer = customer;
         this.party = party;
         this.startTime = startTime;
-        this.endTime = startTime.plusHours(2);
+        this.endTime = endTime;
         this.table = table;
     }
 
@@ -44,11 +43,11 @@ public class Booking {
     }
 
     public Long getId() {
-        return id;
+        return Id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.Id = id;
     }
 
     public Customer getCustomer() {
@@ -83,11 +82,11 @@ public class Booking {
         this.table = table;
     }
 
-    public LocalDateTime getEndtime() {
+    public LocalDateTime getEndTime() {
         return endTime;
     }
 
-    public void setEndtime(LocalDateTime endTime) {
+    public void setEndTime(LocalDateTime endTime) {
         this.endTime = endTime;
     }
 

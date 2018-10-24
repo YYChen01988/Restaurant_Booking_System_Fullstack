@@ -1,18 +1,37 @@
 import React from 'react';
-import Booking from '../../components/bookings/Booking'
+import moment from 'moment';
+import Booking from '../../components/bookings/Booking';
 
 const BookingList = (props) => {
-		const allBookings = props.bookings.map((booking) => {
-			return <li key={booking.id} className="component-item">
-			<Booking booking={booking}/>
-			</li>
-		})
+	const formattedFilteredDate = moment(props.filterDate).format("DD-MM-YY")
+	const allBookings = props.bookings.map((booking) => {
+		return <Booking booking={booking} key={booking.id}/>
+	})
 
-		return (
-			<ul className="component-list">
-				{allBookings}
-			</ul>
-		)
-	}
+	const selectedBooking = allBookings.filter((booking) => {
+		const filteredStartTime = moment(booking.props.booking.startTime).format("DD-MM-YY");
+		if (filteredStartTime === formattedFilteredDate) {
+			return <Booking booking={booking} key={booking.id}/>
+		}
+	})
+
+	return (
+		<div className="booking-list">
+			<h1 className="heading">Bookings for {formattedFilteredDate}</h1>
+			<table className="booking-table">
+				<tbody>
+					<tr>
+						<th>Customer</th>
+						<th>People</th>
+						<th>Start Time</th>
+						<th>End Time</th>
+						<th>Table</th>
+					</tr>
+					{selectedBooking}
+				</tbody>
+			</table>
+		</div>
+	)
+}
 
 export default BookingList;

@@ -13,7 +13,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Id;
 
     @Column(name="name")
     private String name;
@@ -24,7 +24,6 @@ public class Customer {
     @Column(name="contact")
     private String contact;
 
-    @JsonIgnoreProperties("customer")
     @OneToMany(mappedBy= "customer", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 
@@ -54,11 +53,11 @@ public class Customer {
     }
 
     public Long getId() {
-        return id;
+        return Id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.Id = id;
     }
 
     public String getName() {
