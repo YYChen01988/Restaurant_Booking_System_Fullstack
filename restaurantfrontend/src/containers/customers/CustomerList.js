@@ -7,8 +7,6 @@ const CustomerList = (props) => {
 	}
 
 	const sortedCustomers = props.customers.sort((a, b) => {
-		console.log("A", [Object.keys(a.bookings)]);
-		console.log("B", b.bookings);
 		return (Object.keys(b.bookings).length - Object.keys(a.bookings).length)
 	}) ;
 	// => (a.bookings.size() > b.bookings.size()) ? 1: (b.bookings.size() > a.bookings.size())? -1 :)
