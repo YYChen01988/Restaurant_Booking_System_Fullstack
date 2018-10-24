@@ -13,10 +13,16 @@ const NavBar = (props) => {
           <div className="dropdown-content">
             <Link to="/bookings">Bookings</Link>
             <Link to="/bookings/new">Create Booking</Link>
+            <Link to="/bookings/edit">Edit Booking</Link>
           </div>
         </li>
-        <li>
-          <Link to="/customers">Customers</Link>
+        <li className="dropdown">
+          <a href="javascript:void(0)" className="dropbtn">Customers<i className="fa fa-caret-down"></i></a>
+          <div className="dropdown-content">
+            <Link to="/customers">Customers</Link>
+            <Link to="/customers/new">Create Customer</Link>
+            <Link to="/customers/edit">Edit Customer</Link>
+          </div>
         </li>
         <li>
           <Link to="/tables">Tables</Link>

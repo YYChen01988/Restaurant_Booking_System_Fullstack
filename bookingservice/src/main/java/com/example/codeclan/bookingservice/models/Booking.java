@@ -1,6 +1,7 @@
 package com.example.codeclan.bookingservice.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -20,12 +21,11 @@ public class Booking {
     @Column(name="end_time")
     private LocalDateTime endTime;
 
-//    @JsonIgnore
+//    @JsonIgnoreProperties("table")
     @ManyToOne
     @JoinColumn (name = "table_id", nullable = false)
     private Table table;
 
-//    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="customer_id", nullable = false)
     private Customer customer;

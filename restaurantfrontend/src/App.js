@@ -29,8 +29,8 @@ class App extends Component {
             }}/>
 
             {/* BOOKINGS */}
-            <Route exact path="/bookings" component={BookingContainer}/>
             <Route exact path="/bookings/new" component={BookingFormContainer}/>
+            <Route exact path="/bookings" component={BookingContainer}/>
             <Route exact path="/bookings/:id" render={(props) => {
               const url = "/bookings/" + props.match.params.id + "?projection=embedCustomer"
               return <BookingContainer url={url}/>

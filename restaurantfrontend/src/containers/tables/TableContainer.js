@@ -15,7 +15,7 @@ class TableContainer extends Component {
       if(!data._embedded){
         this.setState({tables: [data]})
       } else if (!data._embedded.tables){
-                this.setState({tables: [data]})
+        this.setState({tables: [data]})
       }
       else {
         this.setState({tables: data._embedded.tables})
