@@ -9,6 +9,7 @@ class BookingFormContainer extends Component {
     this.state = {
       customers: [],
       tables: [],
+      fullTableList: [],
       bookings: [],
       startDate: moment()};
       this.handleDate = this.handleDate.bind(this);
@@ -16,7 +17,18 @@ class BookingFormContainer extends Component {
     }
 
     handleDate(date){
-      this.setState({ startDate: date});
+      var requestedStartTime = date
+      var requestedEndTime = new moment(date);
+      requestedEndTime.add(2, 'hours')
+      const overlappingBookings = this.state.bookings.filter(booking => !(requestedStartTime > moment(booking.endTime)  || requestedEndTime < moment(booking.startTime)) );
+
+      const unavalableTableIds = overlappingBookings.map(booking => booking.table.id)
+      //console.log(this.state.tables);
+      //console.log("unavalableTableIds", unavalableTableIds);
+      const avalableTables = this.state.fullTableList.filter(table =>   !unavalableTableIds.includes(table.id))
+      //console.log("availableTables",avalableTables)
+      //console.log("fullTableList",this.state.fullTableList)
+      this.setState({ startDate: date, tables: avalableTables});
     }
 
     componentDidMount(){
@@ -35,12 +47,11 @@ class BookingFormContainer extends Component {
       fetch('/tables')
       .then((res) => res.json())
       .then((data) => {
-        this.setState({tables: data._embedded.tables})
+        this.setState({tables: data._embedded.tables, fullTableList: data._embedded.tables})
       })
     }
 
     handleSubmit(event){
-      console.log(event.target.value);
       event.preventDefault();
       fetch("/bookings", {
         method: 'POST',
