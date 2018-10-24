@@ -31,21 +31,12 @@ class CustomerFormContainer extends Component {
 
   render() {
 
-    // const options = this.state.bookings.map((booking, index) => {
-    //   return <option key={index} value={booking._links.self.href}>{booking.name}</option>
-    // })
-
-
     return (
       <div className="form-container">
         <form className="form" onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Name" name="name" required/>
           <input type="number" placeholder="Age" name="age" min="15"/>
           <input type="text" placeholder="Contact" name="contact" required/>
-          {/* <select name="booking">
-            {options}
-          </select>
-          <input type="date" name="" /> */}
           <button type="submit" className="button">Save</button>
         </form>
       </div>
