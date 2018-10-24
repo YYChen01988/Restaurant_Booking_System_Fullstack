@@ -9,15 +9,72 @@ class BookingFormContainer extends Component {
     this.state = {
       customers: [],
       tables: [],
+      fullTableList: [],
       bookings: [],
       startDate: moment()};
       this.handleDate = this.handleDate.bind(this);
       this.handleInput = this.handleInput.bind(this);
     }
+  
+    handleDate(date){
+      var requestedStartTime = date
+      var requestedEndTime = new moment(date);
+      requestedEndTime.add(2, 'hours')
+      const overlappingBookings = this.state.bookings.filter(booking => !(requestedStartTime > moment(booking.endTime)  || requestedEndTime < moment(booking.startTime)) );
 
-  handleDate(date){
-    this.setState({ startDate: date});
-  }
+      const unavalableTableIds = overlappingBookings.map(booking => booking.table.id)
+      //console.log(this.state.tables);
+      //console.log("unavalableTableIds", unavalableTableIds);
+      const avalableTables = this.state.fullTableList.filter(table =>   !unavalableTableIds.includes(table.id))
+      //console.log("availableTables",avalableTables)
+      //console.log("fullTableList",this.state.fullTableList)
+      this.setState({ startDate: date, tables: avalableTables});
+    }
+
+    componentDidMount(){
+      fetch('/bookings')
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({bookings: data._embedded.bookings})
+      })
+
+      fetch('/customers')
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({customers: data._embedded.customers})
+      })
+
+      fetch('/tables')
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({tables: data._embedded.tables, fullTableList: data._embedded.tables})
+      })
+    }
+
+    handleSubmit(event){
+      event.preventDefault();
+      fetch("/bookings", {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          "customer": event.target.customer.name.value,
+          "age": event.target.customer.age.value,
+          "contact": event.target.customer.contact.value,
+        })
+      }).then(() => {
+        window.location = "/bookings";
+      })
+    }
+
+    handleInput(event){
+      console.log(event.target.value);
+
+        }
+
+    render() {
+      const customerOptions = this.state.customers.map((customer, index) => {
+        return <option key={index} value={customer.name}>{customer.name}</option>
+      })
 
   componentDidMount(){
     fetch('/bookings')
