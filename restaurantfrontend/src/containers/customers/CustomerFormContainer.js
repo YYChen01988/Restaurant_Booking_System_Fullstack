@@ -37,6 +37,7 @@ class CustomerFormContainer extends Component {
 
 
     return (
+      <div className="form-container">
         <form className="form" onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Name" name="name" required/>
           <input type="number" placeholder="Age" name="age" min="15"/>
@@ -45,8 +46,9 @@ class CustomerFormContainer extends Component {
             {options}
           </select>
           <input type="date" name="" /> */}
-          <button type="submit">Save</button>
+          <button type="submit" className="button">Save</button>
         </form>
+      </div>
     )
   }
 
