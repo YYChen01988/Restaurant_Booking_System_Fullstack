@@ -31,11 +31,11 @@ public class Booking {
     private Customer customer;
 
 
-    public Booking(Customer customer, int party, LocalDateTime startTime, Table table) {
+    public Booking(Customer customer, int party, LocalDateTime startTime, LocalDateTime endTime, Table table) {
         this.customer = customer;
         this.party = party;
         this.startTime = startTime;
-        this.endTime = startTime.plusHours(2);
+        this.endTime = endTime;
         this.table = table;
     }
 
@@ -82,11 +82,11 @@ public class Booking {
         this.table = table;
     }
 
-    public LocalDateTime getEndtime() {
+    public LocalDateTime getEndTime() {
         return endTime;
     }
 
-    public void setEndtime(LocalDateTime endTime) {
+    public void setEndTime(LocalDateTime endTime) {
         this.endTime = endTime;
     }
 

@@ -47,8 +47,8 @@ public class Table {
 
     public boolean notDoubleBooking(Booking booking1) {
         for (Booking booking : this.bookings) {
-            if (booking1.getStartTime().isAfter(booking.getEndtime()) ||
-                    booking1.getEndtime().isBefore(booking.getStartTime()))
+            if (booking1.getStartTime().isAfter(booking.getEndTime()) ||
+                    booking1.getEndTime().isBefore(booking.getStartTime()))
             return true;
         }
         return false;
