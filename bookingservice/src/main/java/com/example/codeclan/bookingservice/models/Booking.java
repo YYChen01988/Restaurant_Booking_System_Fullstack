@@ -21,6 +21,7 @@ public class Booking {
     @Column(name="end_time")
     private LocalDateTime endTime;
 
+//    @JsonIgnoreProperties("table")
     @ManyToOne
     @JoinColumn (name = "table_id", nullable = false)
     private Table table;

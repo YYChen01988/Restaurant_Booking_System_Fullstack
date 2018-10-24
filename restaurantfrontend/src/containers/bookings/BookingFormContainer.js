@@ -40,6 +40,7 @@ class BookingFormContainer extends Component {
   }
 
   handleSubmit(event){
+    console.log(event.target.startTime.value);
     event.preventDefault();
     fetch("/bookings", {
       method: 'POST',
