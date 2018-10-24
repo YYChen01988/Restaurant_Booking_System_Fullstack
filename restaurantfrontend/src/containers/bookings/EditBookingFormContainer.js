@@ -61,7 +61,7 @@ class EditBookingFormContainer extends Component {
           <p>Table Capacity: {this.state.bookings.table.capacity}</p>
           <p>Change Booking Date: </p>
           <DatePicker
-            className="datepicker"
+            className="date-picker"
             id="datepicker"
             value={moment(this.state.bookings.startTime).format('DD-MM-YY HH:mm')}
             selected={this.state.startDate}
