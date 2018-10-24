@@ -9,7 +9,6 @@ const CustomerList = (props) => {
 	const sortedCustomers = props.customers.sort((a, b) => {
 		return (Object.keys(b.bookings).length - Object.keys(a.bookings).length)
 	}) ;
-	console.log(sortedCustomers);
 
 	const customers = props.customers.map((customer) => {
 

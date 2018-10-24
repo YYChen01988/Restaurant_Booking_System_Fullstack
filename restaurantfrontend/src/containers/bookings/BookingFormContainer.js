@@ -13,7 +13,6 @@ class BookingFormContainer extends Component {
       bookings: [],
       startDate: moment()};
       this.handleDate = this.handleDate.bind(this);
-      this.handleInput = this.handleInput.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handlePartySize = this.handlePartySize.bind(this);
     }
@@ -25,9 +24,6 @@ class BookingFormContainer extends Component {
       const overlappingBookings = this.state.bookings.filter(booking => !(requestedStartTime > moment(booking.endTime)  || requestedEndTime < moment(booking.startTime)));
       const unavalableTableIds = overlappingBookings.map(booking => booking.table.id)
       const avalableTables = this.state.fullTableList.filter(table => !unavalableTableIds.includes(table.id))
-      console.log("overlappingBookings",overlappingBookings)
-      console.log("unavalableTableIds",unavalableTableIds)
-      console.log("avalableTables",avalableTables)
       this.setState({ startDate: date, tables: avalableTables});
     }
 
@@ -76,10 +72,6 @@ class BookingFormContainer extends Component {
     }).then(() => {
       window.location = "/bookings";
     })
-  }
-
-  handleInput(event){
-    console.log(event.target.value);
   }
 
   render() {
