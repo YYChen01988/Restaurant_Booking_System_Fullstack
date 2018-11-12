@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import NavBar from './NavBar.js';
 import CustomerContainer from './containers/customers/CustomerContainer';
+import CustomerFormContainer from './containers/customers/CustomerFormContainer';
+import EditCustomerFormContainer from './containers/customers/EditCustomerFormContainer';
 import BookingContainer from './containers/bookings/BookingContainer';
-import TableContainer from './containers/tables/TableContainer';
 import BookingFormContainer from './containers/bookings/BookingFormContainer';
 import EditBookingFormContainer from './containers/bookings/EditBookingFormContainer';
-import CustomerFormContainer from './containers/customers/CustomerFormContainer';
+import TableContainer from './containers/tables/TableContainer';
 
 class App extends Component {
 
@@ -26,6 +27,10 @@ class App extends Component {
             <Route exact path="/customers/:id" render={(props) => {
               const url = "/customers/" + props.match.params.id + "?projection=embedBooking"
               return <CustomerContainer url={url}/>
+            }}/>
+            <Route exact path="/customers/:id/edit" render={(props) => {
+              const url = "/customers/" + props.match.params.id + "?projection=embedBooking"
+              return <EditCustomerFormContainer url={url}/>
             }}/>
 
             {/* BOOKINGS */}
