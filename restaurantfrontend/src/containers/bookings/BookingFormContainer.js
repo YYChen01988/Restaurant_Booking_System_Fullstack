@@ -30,7 +30,7 @@ class BookingFormContainer extends Component {
 
     handlePartySize(party){
       var size = party.target.value
-      const partySizeCheck = this.state.tables.filter((table) => {
+      const partySizeCheck = this.state.fullTableList.filter((table) => {
         return table.capacity >= size;
       })
       this.setState({tables: partySizeCheck})
