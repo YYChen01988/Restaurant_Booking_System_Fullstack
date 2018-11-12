@@ -25,7 +25,7 @@ class BookingFormContainer extends Component {
       const overlappingBookings = this.state.bookings.filter(booking => !(requestedStartTime > moment(booking.endTime)  || requestedEndTime < moment(booking.startTime)));
       const unavalableTableIds = overlappingBookings.map(booking => booking.table.id)
       const avalableTables = this.state.fullTableList.filter(table => !unavalableTableIds.includes(table.id))
-      this.setState({ startDate: date, tables: avalableTables});
+      this.setState({startDate: date, tables: avalableTables});
     }
 
     handlePartySize(party){
