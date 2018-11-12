@@ -5,7 +5,10 @@ const Customer = (props) => {
   if (props.customer.bookings) {
     numberOfVisits = Object.keys(props.customer.bookings).length
   };
+
   const url = "/customers/" + props.customer.id
+  const editUrl = "/customers/" + props.customer.id + "/edit"
+
   return (
     <tr>
       <td><a href={url}>{props.customer.name}</a></td>
