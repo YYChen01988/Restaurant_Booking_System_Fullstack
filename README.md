@@ -35,10 +35,6 @@ Your project must meet the following specification:
 Before you start this project, write an MVP and potential extensions. You **must** get this signed off by an instructor before proceeding.
 
 
-## PDA Reminder
+## TODO
 
-Remember to gather evidence for your PDA this week. This should only take 5 minutes:
-
-- Go to your [PDA Checklist](https://github.com/codeclan/pda/tree/master/Student%20Checklist/)
-
-- Submit your PDA evidence (screenshots, etc.) to your own PDA repo
+Add correct route for showing customer and editing customer, same for booking
