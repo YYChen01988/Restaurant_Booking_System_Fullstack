@@ -53,7 +53,7 @@ public class DataLoader implements ApplicationRunner {
         LocalDateTime endTime9 = LocalDateTime.of(2018,10,26,19,30);
 
 
-        Customer customer1 = new Customer("Boaty McBoatface", 30, "boat@mcboatface.com");
+        Customer customer1 = new Customer("Boaty McBoatface", 30, "boaty@mcboatface.com");
         customerRepository.save(customer1);
         Customer customer2 = new Customer("Andrew Craigie", 19, "andyc@pimping.co.uk");
         customerRepository.save(customer2);
