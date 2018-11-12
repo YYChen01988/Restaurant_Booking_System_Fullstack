@@ -37,4 +37,5 @@ Before you start this project, write an MVP and potential extensions. You **must
 
 ## TODO
 
-Add correct route for showing customer and editing customer, same for booking
+- Add correct route for showing customer and editing customer, same for booking
+- Bookings needs a button to show all bookings
