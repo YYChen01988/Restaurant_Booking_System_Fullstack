@@ -1,3 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
 /* HEADER NAVBAR */
 
 ul.topnav {
@@ -18,6 +29,19 @@ li a, .dropbtn {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+}
+
+.dropbtn {
+  background-color: inherit;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
@@ -107,6 +131,13 @@ th {
   margin: auto;
   width: 300px;
   text-align: center;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+select {
+  font-size: 16px;
 }
 
 input[type=text], input[type=number], select {
@@ -140,11 +171,15 @@ input[type=submit]:hover {
 }
 
 input:focus::-webkit-input-placeholder {
-  color: dodgerblue;
+  color: #4CAF50;
 }
 
 /* DATE */
 
 .date-picker {
   text-align: center;
+}
+
+input#datepicker {
+    width: 200px;
 }

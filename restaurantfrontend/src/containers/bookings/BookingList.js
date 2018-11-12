@@ -13,6 +13,7 @@ const BookingList = (props) => {
 		if (filteredStartTime === formattedFilteredDate) {
 			return <Booking booking={booking} key={booking.id}/>
 		}
+		return null;
 	})
 
 	return (

@@ -27,12 +27,13 @@ class BookingContainer extends Component {
 
   render() {
 		return (
-      <div>
+      <React.Fragment>
+        <h1>Choose a Date</h1>
         <div className="date-picker">
-          <DatePicker className="date-picker" selected={this.state.startDate} onChange={this.handleChange}/>
+          <DatePicker className="date-picker" dateFormat="DD-MM-YY" selected={this.state.startDate} onChange={this.handleChange}/>
         </div>
-			     <BookingList bookings={this.state.bookings} filterDate={this.state.startDate}/>
-      </div>
+			  <BookingList bookings={this.state.bookings} filterDate={this.state.startDate}/>
+      </React.Fragment>
 		)
 	}
 }
