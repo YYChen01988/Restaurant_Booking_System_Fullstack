@@ -9,14 +9,15 @@ const NavBar = (props) => {
           <Link to="/">Home</Link>
         </li>
         <li className="dropdown">
-          <a href="javascript:void(0)" className="dropbtn">Bookings<i className="fa fa-caret-down"></i></a>
+          {/* <button className="dropbtn">Bookings<i className="fa fa-caret-down"></i></button> */}
+          <a href="/bookings" className="dropbtn">Bookings<i className="fa fa-caret-down"></i></a>
           <div className="dropdown-content">
             <Link to="/bookings">Bookings</Link>
             <Link to="/bookings/new">Create Booking</Link>
           </div>
         </li>
         <li className="dropdown">
-          <a href="javascript:void(0)" className="dropbtn">Customers<i className="fa fa-caret-down"></i></a>
+          <a href="/customers" className="dropbtn">Customers<i className="fa fa-caret-down"></i></a>
           <div className="dropdown-content">
             <Link to="/customers">Customers</Link>
             <Link to="/customers/new">Create Customer</Link>

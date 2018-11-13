@@ -8,13 +8,20 @@ class BookingContainer extends Component {
 
   constructor(props){
     super(props);
-    this.state = {bookings: [],
-    startDate: moment()};
+    this.state = {
+      bookings: [],
+      startDate: moment()
+    };
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(empty){
+    this.setState({startDate: null})
   }
 
   handleChange(date){
-    this.setState({ startDate: date});
+    this.setState({startDate: date});
   }
 
   componentDidMount(){
@@ -26,15 +33,17 @@ class BookingContainer extends Component {
   }
 
   render() {
-		return (
-      <div>
-        <div className="date-picker">
-          <DatePicker className="date-picker" selected={this.state.startDate} onChange={this.handleChange}/>
+    return (
+      <React.Fragment>
+        <button className="button" id="booking-button" onClick={this.handleClick}>View all bookings</button>
+        <h1>Choose a Date</h1>
+        <div className="datepicker">
+          <DatePicker className="datepicker" dateFormat="DD-MM-YY" selected={this.state.startDate} onChange={this.handleChange}/>
         </div>
-			     <BookingList bookings={this.state.bookings} filterDate={this.state.startDate}/>
-      </div>
-		)
-	}
+        <BookingList bookings={this.state.bookings} filterDate={this.state.startDate}/>
+      </React.Fragment>
+    )
+  }
 }
 
 

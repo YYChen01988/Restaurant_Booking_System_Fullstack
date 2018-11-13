@@ -13,7 +13,7 @@ Your system must be able to:
 * Display a list of bookings for a given date
 * Display a list of customers ordered by frequency of visits
 
-### Project Extensions:
+### Project Extensions: 
 
 * Don't allow double bookings
 * Add a customer's receipt to a booking so you can view their previous orders and how much they spent
@@ -35,10 +35,6 @@ Your project must meet the following specification:
 Before you start this project, write an MVP and potential extensions. You **must** get this signed off by an instructor before proceeding.
 
 
-## PDA Reminder
+## TODO
 
-Remember to gather evidence for your PDA this week. This should only take 5 minutes:
-
-- Go to your [PDA Checklist](https://github.com/codeclan/pda/tree/master/Student%20Checklist/)
-
-- Submit your PDA evidence (screenshots, etc.) to your own PDA repo
+- Clicking on a customer should show bookings, and then can edit

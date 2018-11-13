@@ -33,27 +33,27 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args){
 
-        LocalDateTime startTime1 = LocalDateTime.of(2018,10,23,16,30);
-        LocalDateTime endTime1 = LocalDateTime.of(2018,10,23,18,30);
-        LocalDateTime startTime2 = LocalDateTime.of(2018,10,24,16,30);
-        LocalDateTime endTime2 = LocalDateTime.of(2018,10,24,18,30);
-        LocalDateTime startTime3 = LocalDateTime.of(2018,10,25,17,00);
-        LocalDateTime endTime3 = LocalDateTime.of(2018,10,25,19,00);
-        LocalDateTime startTime4 = LocalDateTime.of(2018,10,25,19,00);
-        LocalDateTime endTime4 = LocalDateTime.of(2018,10,25,21,00);
-        LocalDateTime startTime5 = LocalDateTime.of(2018,10,25,20,30);
-        LocalDateTime endTime5 = LocalDateTime.of(2018,10,25,22,30);
-        LocalDateTime startTime6 = LocalDateTime.of(2018,10,25,21,00);
-        LocalDateTime endTime6 = LocalDateTime.of(2018,10,25,23,00);
-        LocalDateTime startTime7 = LocalDateTime.of(2018,10,26,13,30);
-        LocalDateTime endTime7 = LocalDateTime.of(2018,10,26,15,30);
-        LocalDateTime startTime8 = LocalDateTime.of(2018,10,26,14,00);
-        LocalDateTime endTime8 = LocalDateTime.of(2018,10,26,16,00);
-        LocalDateTime startTime9 = LocalDateTime.of(2018,10,26,17,30);
-        LocalDateTime endTime9 = LocalDateTime.of(2018,10,26,19,30);
+        LocalDateTime startTime1 = LocalDateTime.of(2018,11,13,16,30);
+        LocalDateTime endTime1 = LocalDateTime.of(2018,11,13,18,30);
+        LocalDateTime startTime2 = LocalDateTime.of(2018,11,14,16,30);
+        LocalDateTime endTime2 = LocalDateTime.of(2018,11,14,18,30);
+        LocalDateTime startTime3 = LocalDateTime.of(2018,11,15,17,00);
+        LocalDateTime endTime3 = LocalDateTime.of(2018,11,15,19,00);
+        LocalDateTime startTime4 = LocalDateTime.of(2018,11,15,19,00);
+        LocalDateTime endTime4 = LocalDateTime.of(2018,11,15,21,00);
+        LocalDateTime startTime5 = LocalDateTime.of(2018,11,15,20,30);
+        LocalDateTime endTime5 = LocalDateTime.of(2018,11,15,22,30);
+        LocalDateTime startTime6 = LocalDateTime.of(2018,11,15,21,00);
+        LocalDateTime endTime6 = LocalDateTime.of(2018,11,15,23,00);
+        LocalDateTime startTime7 = LocalDateTime.of(2018,11,16,13,30);
+        LocalDateTime endTime7 = LocalDateTime.of(2018,11,16,15,30);
+        LocalDateTime startTime8 = LocalDateTime.of(2018,11,16,14,00);
+        LocalDateTime endTime8 = LocalDateTime.of(2018,11,16,16,00);
+        LocalDateTime startTime9 = LocalDateTime.of(2018,11,16,17,30);
+        LocalDateTime endTime9 = LocalDateTime.of(2018,11,16,19,30);
 
 
-        Customer customer1 = new Customer("Jobby McJobface", 30, "jobby@number2.com");
+        Customer customer1 = new Customer("Boaty McBoatface", 30, "boaty@mcboatface.com");
         customerRepository.save(customer1);
         Customer customer2 = new Customer("Andrew Craigie", 19, "andyc@pimping.co.uk");
         customerRepository.save(customer2);
@@ -85,8 +85,6 @@ public class DataLoader implements ApplicationRunner {
         customerRepository.save(customer15);
         Customer customer16 = new Customer("Sithara Sukumar", 20, "sithsuku@empire.in");
         customerRepository.save(customer16);
-        Customer customer17 = new Customer("Kirsty Bruce", 18, "thebruce@bruce.co.uk");
-        customerRepository.save(customer17);
         Customer customer18 = new Customer("Tanny Qureshi", 41, "tbone@nwa.co.uk");
         customerRepository.save(customer18);
         Customer customer19 = new Customer("YingYing Chen", 22, "yingster@triads.tw");

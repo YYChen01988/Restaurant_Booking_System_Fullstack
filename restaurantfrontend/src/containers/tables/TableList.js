@@ -18,8 +18,6 @@ const TableList = (props) => {
 					<tr>
 						<th>Table Number</th>
 						<th>Capacity</th>
-						<th>Reserved</th>
-						<th>Booking</th>
 					</tr>
 					{tables}
 				</tbody>

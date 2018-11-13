@@ -7,8 +7,7 @@ const Table = (props) => {
     <tr>
       <td><a href={url}>{props.table.tableNumber}</a></td>
       <td>{props.table.capacity}</td>
-      <td>{String(props.table.reserved)}</td>
-      <td>Booking goes here</td>
+      {/* <td>{String(props.table.reserved)}</td> */}
     </tr>
   )
 }
