@@ -10,7 +10,6 @@ class EditBookingFormContainer extends Component {
       bookings: null,
       startDate: moment()
     };
-    // this.handleChange = this.handleChange.bind(this);
     this.handleDate = this.handleDate.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
@@ -22,15 +21,6 @@ class EditBookingFormContainer extends Component {
     requestedEndTime.add(2, 'hours')
     this.setState({startDate: date})
   }
-
-  // handleChange(event){
-  //   console.log(event);
-  //   let value = event.target.value
-  //   let name = event.target.name
-  //   let bookingsCopy = Object.assign({}, this.state.bookings);
-  //   bookingsCopy[name] = value;
-  //   this.setState({bookings: bookingsCopy})
-  // }
 
   handleDelete(event){
     const url = "/bookings/" + this.state.bookings.id
