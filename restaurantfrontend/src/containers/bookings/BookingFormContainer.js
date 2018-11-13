@@ -16,45 +16,45 @@ class BookingFormContainer extends Component {
       // this.handleInput = this.handleInput.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handlePartySize = this.handlePartySize.bind(this);
-    }
+  }
 
-    handleDate(date){
-      var requestedStartTime = date
-      var requestedEndTime = new moment(date);
-      requestedEndTime.add(2, 'hours')
-      const overlappingBookings = this.state.bookings.filter(booking => !(requestedStartTime > moment(booking.endTime)  || requestedEndTime < moment(booking.startTime)));
-      const unavalableTableIds = overlappingBookings.map(booking => booking.table.id)
-      const avalableTables = this.state.fullTableList.filter(table => !unavalableTableIds.includes(table.id))
-      this.setState({startDate: date, tables: avalableTables});
-    }
+  handleDate(date){
+    var requestedStartTime = date
+    var requestedEndTime = new moment(date);
+    requestedEndTime.add(2, 'hours')
+    const overlappingBookings = this.state.bookings.filter(booking => !(requestedStartTime > moment(booking.endTime)  || requestedEndTime < moment(booking.startTime)));
+    const unavalableTableIds = overlappingBookings.map(booking => booking.table.id)
+    const avalableTables = this.state.fullTableList.filter(table => !unavalableTableIds.includes(table.id))
+    this.setState({startDate: date, tables: avalableTables});
+  }
 
-    handlePartySize(party){
-      var size = party.target.value
-      const partySizeCheck = this.state.fullTableList.filter((table) => {
-        return table.capacity >= size;
-      })
-      this.setState({tables: partySizeCheck})
-    }
+  handlePartySize(party){
+    var size = party.target.value
+    const partySizeCheck = this.state.fullTableList.filter((table) => {
+      return table.capacity >= size;
+    })
+    this.setState({tables: partySizeCheck})
+  }
 
-    componentDidMount(){
-      fetch('/bookings')
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({bookings: data._embedded.bookings})
-      })
+  componentDidMount(){
+    fetch('/bookings')
+    .then((res) => res.json())
+    .then((data) => {
+      this.setState({bookings: data._embedded.bookings})
+    })
 
-      fetch('/customers')
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({customers: data._embedded.customers})
-      })
+    fetch('/customers')
+    .then((res) => res.json())
+    .then((data) => {
+      this.setState({customers: data._embedded.customers})
+    })
 
-      fetch('/tables')
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({tables: data._embedded.tables, fullTableList: data._embedded.tables})
-      })
-    }
+    fetch('/tables')
+    .then((res) => res.json())
+    .then((data) => {
+      this.setState({tables: data._embedded.tables, fullTableList: data._embedded.tables})
+    })
+  }
 
   handleSubmit(event){
     event.preventDefault();
@@ -92,7 +92,7 @@ class BookingFormContainer extends Component {
       <React.Fragment>
         <h1>Create New Booking</h1>
         <div className="form-container">
-          <form className="form" onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit}>
             <DatePicker
               className="datepicker"
               id="datepicker"
@@ -115,7 +115,7 @@ class BookingFormContainer extends Component {
               <option value="" disabled selected required>Select Table Number</option>
               {tableOptions}
             </select>
-            <button type="submit" className="button">Save</button>
+            <input type="submit" value="Save" className="button"/>
           </form>
         </div>
       </React.Fragment>

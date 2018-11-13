@@ -47,14 +47,37 @@ class EditCustomerFormContainer extends Component {
       <React.Fragment>
         <h1>Edit Customer</h1>
         <div className="form-container">
-          <form className="form" onSubmit={this.handleSubmit}>
-            <input type="text" placeholder="Name" name="name"
-              value={this.state.customers.name} onChange={this.handleChange} required/>
-            <input type="number" placeholder="Age" name="age"
-              value={this.state.customers.age} onChange={this.handleChange} min="15"/>
-            <input type="text" placeholder="Contact" name="contact"
-              value={this.state.customers.contact} onChange={this.handleChange} required/>
-            <button type="submit" className="button">Save</button>
+          <form onSubmit={this.handleSubmit}>
+
+            <div className="row">
+              <div className="col-30">
+                <label htmlFor="name">Name: </label>
+              </div>
+              <div className="col-70">
+                <input type="text" name="name" defaultValue={this.state.customers.name} onChange={this.handleChange} required/>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-30">
+                <label htmlFor="age">Age: </label>
+              </div>
+              <div className="col-70">
+                <input type="number" name="age" defaultValue={this.state.customers.age} onChange={this.handleChange} min="15"/>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-30">
+                <label htmlFor="contact">Contact: </label>
+              </div>
+              <div className="col-70">
+                <input type="text" name="contact" defaultValue={this.state.customers.contact} onChange={this.handleChange} required/>
+              </div>
+            </div>
+
+            <input type="submit" value="Submit" className="button"/>
+
           </form>
         </div>
       </React.Fragment>

@@ -35,11 +35,11 @@ class CustomerFormContainer extends Component {
       <React.Fragment>
         <h1>Create New Customer</h1>
         <div className="form-container">
-          <form className="form" onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit}>
             <input type="text" placeholder="Name" name="name" required/>
             <input type="number" placeholder="Age" name="age" min="15"/>
             <input type="text" placeholder="Contact" name="contact" required/>
-            <button type="submit" className="button">Save</button>
+            <input type="submit" value="Save" className="button"/>
           </form>
         </div>
       </React.Fragment>

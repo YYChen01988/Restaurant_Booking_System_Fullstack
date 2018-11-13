@@ -63,31 +63,35 @@ class EditBookingFormContainer extends Component {
     if (!this.state.bookings) return null;
 
     return(
-      <div className="form-container">
-        <p>Original booking: {moment(this.state.bookings.startTime).format('DD-MM-YY HH:mm')}</p>
-        <form onSubmit={this.handleSubmit}>
-          <p>Booking Customer: {this.state.bookings.customer.name} </p>
-          <p>Table Number: {this.state.bookings.table.tableNumber}</p>
-          <p>Table Capacity: {this.state.bookings.table.capacity}</p>
-          <p>Change Booking Date </p>
-          <DatePicker
-            className="date-picker"
-            id="datepicker"
-            value={moment(this.state.bookings.startTime).format('DD-MM-YY HH:mm')}
-            selected={this.state.startDate}
-            onChange={this.handleDate}
-            showTimeSelect
-            minTime={moment().hours(12).minutes(0)}
-            maxTime={moment().hours(22).minutes(30)}
-            timeFormat="HH:mm"
-            timeIntervals={30}
-            dateFormat="LLL"
-            timeCaption="time"
-          />
-          <button className="button" type="submit">Save Changes</button>
-          <button className="button" onClick={this.handleDelete}>Delete Booking</button>
-        </form>
-      </div>
+      <React.Fragment>
+        <h1>Edit Booking</h1>
+        <div className="form-container">
+          <p>Original booking: {moment(this.state.bookings.startTime).format('DD-MM-YY HH:mm')}</p>
+          <form onSubmit={this.handleSubmit}>
+            <p>Booking Customer: {this.state.bookings.customer.name} </p>
+            <p>Table Number: {this.state.bookings.table.tableNumber}</p>
+            <p>Table Capacity: {this.state.bookings.table.capacity}</p>
+            <br/>
+            <h3>Change Booking Date </h3>
+            <DatePicker
+              className="date-picker"
+              id="datepicker"
+              value={moment(this.state.bookings.startTime).format('DD-MM-YY HH:mm')}
+              selected={this.state.startDate}
+              onChange={this.handleChange}
+              showTimeSelect
+              minTime={moment().hours(12).minutes(0)}
+              maxTime={moment().hours(22).minutes(30)}
+              timeFormat="HH:mm"
+              timeIntervals={30}
+              dateFormat="LLL"
+              timeCaption="time"
+            />
+            <input type="submit" value="Save"/>
+            <input type="submit" value="Delete" onClick={this.handleDelete}/>
+          </form>
+        </div>
+      </React.Fragment>
     )
   }
 
