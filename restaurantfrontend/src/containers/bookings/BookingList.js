@@ -16,6 +16,26 @@ const BookingList = (props) => {
 		return null;
 	})
 
+	if (props.filterDate === null) {
+		return (
+			<div className="booking-list">
+				<h1 className="heading">All Bookings</h1>
+				<table className="booking-table">
+					<tbody>
+						<tr>
+							<th>Customer</th>
+							<th>People</th>
+							<th>Start Time</th>
+							<th>End Time</th>
+							<th>Table</th>
+						</tr>
+						{allBookings}
+					</tbody>
+				</table>
+			</div>
+		)
+	}
+
 	return (
 		<div className="booking-list">
 			<h1 className="heading">Bookings for {formattedFilteredDate}</h1>

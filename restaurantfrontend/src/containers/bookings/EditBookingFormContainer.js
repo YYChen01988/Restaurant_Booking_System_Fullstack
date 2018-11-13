@@ -6,20 +6,31 @@ import moment from 'moment';
 class EditBookingFormContainer extends Component {
   constructor(props){
     super(props);
-    this.state = {bookings: null}
-    this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      bookings: null,
+      startDate: moment()
+    };
+    // this.handleChange = this.handleChange.bind(this);
+    this.handleDate = this.handleDate.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  handleChange(event){
-    let value = event.target.value
-    let name = event.target.name
-
-    let bookingsCopy = Object.assign({}, this.state.bookings);
-    bookingsCopy[name] = value;
-    this.setState({ bookings: bookingsCopy })
+  handleDate(date){
+    var requestedStartTime = date
+    var requestedEndTime = new moment(date);
+    requestedEndTime.add(2, 'hours')
+    this.setState({startDate: date})
   }
+
+  // handleChange(event){
+  //   console.log(event);
+  //   let value = event.target.value
+  //   let name = event.target.name
+  //   let bookingsCopy = Object.assign({}, this.state.bookings);
+  //   bookingsCopy[name] = value;
+  //   this.setState({bookings: bookingsCopy})
+  // }
 
   handleDelete(event){
     const url = "/bookings/" + this.state.bookings.id
@@ -61,7 +72,6 @@ class EditBookingFormContainer extends Component {
 
   render(){
     if (!this.state.bookings) return null;
-
     return(
       <React.Fragment>
         <h1>Edit Booking</h1>
@@ -74,14 +84,13 @@ class EditBookingFormContainer extends Component {
             <br/>
             <h3>Change Booking Date </h3>
             <DatePicker
-              className="date-picker"
+              className="datepicker"
               id="datepicker"
-              value={moment(this.state.bookings.startTime).format('DD-MM-YY HH:mm')}
               selected={this.state.startDate}
-              onChange={this.handleChange}
+              onChange={this.handleDate}
               showTimeSelect
               minTime={moment().hours(12).minutes(0)}
-              maxTime={moment().hours(22).minutes(30)}
+              maxTime={moment().hours(22).minutes(0)}
               timeFormat="HH:mm"
               timeIntervals={30}
               dateFormat="LLL"

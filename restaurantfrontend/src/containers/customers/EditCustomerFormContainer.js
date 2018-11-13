@@ -11,7 +11,6 @@ class EditCustomerFormContainer extends Component {
   handleChange(event){
     let value = event.target.value
     let name = event.target.name
-
     let customersCopy = Object.assign({}, this.state.customers);
     customersCopy[name] = value;
     this.setState({customers: customersCopy})

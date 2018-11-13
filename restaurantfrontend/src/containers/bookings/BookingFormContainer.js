@@ -11,11 +11,11 @@ class BookingFormContainer extends Component {
       tables: [],
       fullTableList: [],
       bookings: [],
-      startDate: moment()};
-      this.handleDate = this.handleDate.bind(this);
-      // this.handleInput = this.handleInput.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-      this.handlePartySize = this.handlePartySize.bind(this);
+      startDate: moment()
+    };
+    this.handleDate = this.handleDate.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handlePartySize = this.handlePartySize.bind(this);
   }
 
   handleDate(date){
@@ -75,9 +75,6 @@ class BookingFormContainer extends Component {
     })
   }
 
-  // handleInput(event){
-  //   console.log(event.target.value);
-  // }
 
   render() {
     const customerOptions = this.state.customers.map((customer, index) => {
@@ -124,4 +121,4 @@ class BookingFormContainer extends Component {
 
 }
 
-  export default BookingFormContainer;
+export default BookingFormContainer;
