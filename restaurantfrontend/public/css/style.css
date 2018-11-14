@@ -102,6 +102,7 @@ main {
     max-width:750px;
     margin: 20px auto;
     clear: left;
+    text-align: center;
 }
 
 .home-button {

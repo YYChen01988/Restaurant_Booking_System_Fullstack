@@ -33,9 +33,7 @@ const HomeContainer = (props) => {
 
         </div>
         <footer>
-          <center>
-            <p>© 2018 T-Bone's Tavern</p>
-          </center>
+          <p>© 2018 T-Bone's Tavern</p>
         </footer>
       </main>
 
