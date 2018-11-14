@@ -16,7 +16,6 @@ class EditBookingFormContainer extends Component {
   }
 
   handleDate(date){
-    var requestedStartTime = date
     var requestedEndTime = new moment(date);
     requestedEndTime.add(2, 'hours')
     this.setState({startDate: date})
@@ -66,7 +65,7 @@ class EditBookingFormContainer extends Component {
       <React.Fragment>
         <h1>Edit Booking</h1>
         <div className="form-container">
-          <p>Original booking: {moment(this.state.bookings.startTime).format('DD-MM-YY HH:mm')}</p>
+          <p className="p-booking">Original booking: {moment(this.state.bookings.startTime).format('DD-MM-YY HH:mm')}</p>
           <form onSubmit={this.handleSubmit}>
             <p>Booking Customer: {this.state.bookings.customer.name} </p>
             <p>Table Number: {this.state.bookings.table.tableNumber}</p>

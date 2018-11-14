@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import NavBar from './NavBar.js';
+import HomeContainer from './containers/HomeContainer';
 import CustomerContainer from './containers/customers/CustomerContainer';
 import CustomerFormContainer from './containers/customers/CustomerFormContainer';
 import EditCustomerFormContainer from './containers/customers/EditCustomerFormContainer';
@@ -18,7 +19,10 @@ class App extends Component {
           <NavBar/>
           <Switch>
 
-            {/* CUSTOMERS */}
+            {/* Home */}
+            <Route exact path = "/" component = {HomeContainer} />
+
+            {/* Customers */}
             <Route exact path="/customers" render={() => {
               const url = "/customers";
               return <CustomerContainer url={url}/>
@@ -33,7 +37,7 @@ class App extends Component {
               return <EditCustomerFormContainer url={url}/>
             }}/>
 
-            {/* BOOKINGS */}
+            {/* Bookings */}
             <Route exact path="/bookings/new" component={BookingFormContainer}/>
             <Route exact path="/bookings" component={BookingContainer}/>
             <Route exact path="/bookings/:id" render={(props) => {
@@ -45,7 +49,7 @@ class App extends Component {
               return <EditBookingFormContainer url={url}/>
             }}/>
 
-            {/* TABLES */}
+            {/* Tables */}
             <Route exact path="/tables" render={() => {
               const url = "/tables";
               return <TableContainer url={url}/>
