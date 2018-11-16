@@ -5,6 +5,7 @@ import HomeContainer from './containers/HomeContainer';
 import CustomerContainer from './containers/customers/CustomerContainer';
 import CustomerFormContainer from './containers/customers/CustomerFormContainer';
 import EditCustomerFormContainer from './containers/customers/EditCustomerFormContainer';
+// import CustomerDetail from './containers/customers/CustomerDetail';
 import BookingContainer from './containers/bookings/BookingContainer';
 import BookingFormContainer from './containers/bookings/BookingFormContainer';
 import EditBookingFormContainer from './containers/bookings/EditBookingFormContainer';

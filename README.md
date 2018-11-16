@@ -13,7 +13,7 @@ Your system must be able to:
 * Display a list of bookings for a given date
 * Display a list of customers ordered by frequency of visits
 
-### Project Extensions: 
+### Project Extensions:
 
 * Don't allow double bookings
 * Add a customer's receipt to a booking so you can view their previous orders and how much they spent
@@ -37,6 +37,6 @@ Before you start this project, write an MVP and potential extensions. You **must
 
 ## TODO
 
-- Clicking on a customer should show bookings, and then can edit
 - Add logo
+- Use request helper function
 - Does end time need to be hardcoded in Java?
