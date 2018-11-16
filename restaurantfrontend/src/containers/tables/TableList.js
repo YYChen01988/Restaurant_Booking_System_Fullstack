@@ -11,9 +11,9 @@ const TableList = (props) => {
 	})
 
 	return (
-		<div className="table-list">
-			<h1 className="heading">Tables</h1>
-			<table className="table-table">
+		<React.Fragment>
+			<h1>Tables</h1>
+			<table>
 				<tbody>
 					<tr>
 						<th>Table Number</th>
@@ -22,7 +22,7 @@ const TableList = (props) => {
 					{tables}
 				</tbody>
 			</table>
-		</div>
+		</React.Fragment>
 	)
 }
 

@@ -27,7 +27,7 @@ const HomeContainer = (props) => {
 
           <div className="grid-row">
             <div className="cell">
-              <button class="home-button"><span><a href="/tables">Tables</a></span></button>
+              <button className="home-button"><span><a href="/tables">Tables</a></span></button>
             </div>
           </div>
 

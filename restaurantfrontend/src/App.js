@@ -5,11 +5,12 @@ import HomeContainer from './containers/HomeContainer';
 import CustomerContainer from './containers/customers/CustomerContainer';
 import CustomerFormContainer from './containers/customers/CustomerFormContainer';
 import EditCustomerFormContainer from './containers/customers/EditCustomerFormContainer';
-// import CustomerDetail from './containers/customers/CustomerDetail';
+import CustomerDetail from './containers/customers/CustomerDetail';
 import BookingContainer from './containers/bookings/BookingContainer';
 import BookingFormContainer from './containers/bookings/BookingFormContainer';
 import EditBookingFormContainer from './containers/bookings/EditBookingFormContainer';
 import TableContainer from './containers/tables/TableContainer';
+import TableDetailContainer from './containers/tables/TableDetailContainer';
 
 class App extends Component {
 
@@ -31,7 +32,7 @@ class App extends Component {
             <Route exact path="/customers/new" component={CustomerFormContainer}/>
             <Route exact path="/customers/:id" render={(props) => {
               const url = "/customers/" + props.match.params.id + "?projection=embedBooking"
-              return <CustomerContainer url={url}/>
+              return <CustomerDetail url={url}/>
             }}/>
             <Route exact path="/customers/:id/edit" render={(props) => {
               const url = "/customers/" + props.match.params.id + "?projection=embedBooking"
@@ -57,7 +58,7 @@ class App extends Component {
             }}/>
             <Route exact path="/tables/:id" render={(props) => {
               const url = "/tables/" + props.match.params.id + "?projection=embedBooking"
-              return <TableContainer url={url}/>
+              return <TableDetailContainer url={url}/>
             }}/>
 
           </Switch>
