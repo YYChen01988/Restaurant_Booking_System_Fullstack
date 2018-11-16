@@ -37,6 +37,6 @@ Before you start this project, write an MVP and potential extensions. You **must
 
 ## TODO
 
-- Clicking on a customer should show bookings, and then can edit
 - Add logo
 - Use request helper function
+- Does end time need to be hardcoded in Java?
