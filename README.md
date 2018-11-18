@@ -40,3 +40,4 @@ Before you start this project, write an MVP and potential extensions. You **must
 - Add logo
 - Does end time need to be hardcoded in Java?
 - Add date of birth instead of age(can still calculate age), phone number, address for customers
+- Adds search bar to find customer?
