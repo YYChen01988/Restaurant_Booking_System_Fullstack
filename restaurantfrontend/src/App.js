@@ -10,7 +10,8 @@ import BookingContainer from './containers/bookings/BookingContainer';
 import BookingFormContainer from './containers/bookings/BookingFormContainer';
 import EditBookingFormContainer from './containers/bookings/EditBookingFormContainer';
 import TableContainer from './containers/tables/TableContainer';
-import TableDetailContainer from './containers/tables/TableDetailContainer';
+import TableDetail from './containers/tables/TableDetail';
+// import TableDetailContainer from './containers/tables/TableDetailContainer';
 
 class App extends Component {
 
@@ -58,7 +59,7 @@ class App extends Component {
             }}/>
             <Route exact path="/tables/:id" render={(props) => {
               const url = "/tables/" + props.match.params.id + "?projection=embedBooking"
-              return <TableDetailContainer url={url}/>
+              return <TableDetail url={url}/>
             }}/>
 
           </Switch>

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Request from '../../helpers/request'
 
 class CustomerFormContainer extends Component {
   constructor(props){
@@ -7,8 +8,8 @@ class CustomerFormContainer extends Component {
   }
 
   componentDidMount(){
-    fetch('/customers')
-    .then((res) => res.json())
+    const request = new Request();
+    request.get('/customers')
     .then((data) => {
       this.setState({customers: data._embedded.customers})
     })

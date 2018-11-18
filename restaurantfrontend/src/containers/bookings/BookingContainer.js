@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 import BookingList from './BookingList.js';
+import Request from '../../helpers/request';
 
 class BookingContainer extends Component {
 
@@ -25,8 +26,8 @@ class BookingContainer extends Component {
   }
 
   componentDidMount(){
-    fetch('/bookings')
-    .then((res) => res.json())
+    const request = new Request();
+    request.get('/bookings')
     .then((data) => {
       this.setState({bookings: data._embedded.bookings})
     })

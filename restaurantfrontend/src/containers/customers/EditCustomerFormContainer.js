@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Request from '../../helpers/request'
 
 class EditCustomerFormContainer extends Component {
   constructor(props) {
@@ -33,8 +34,8 @@ class EditCustomerFormContainer extends Component {
   }
 
   componentDidMount(){
-    fetch(this.props.url)
-    .then((res) => res.json())
+    const request = new Request();
+    request.get(this.props.url)
     .then((data) => {
       this.setState({customers: data})
     })

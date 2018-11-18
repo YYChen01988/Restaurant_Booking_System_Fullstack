@@ -2,7 +2,6 @@ import React from 'react';
 import moment from 'moment';
 
 const CustomerIndividual = props => {
-  console.log(props);
   if(!props.customer) return null;
   else if (Object.keys(props.customer.bookings).length === 0) return (<h1>No Bookings for {props.customer.name}</h1>);
 
@@ -13,7 +12,6 @@ const CustomerIndividual = props => {
   };
 
   const bookings = props.customer.bookings.map((booking, index) => {
-    console.log(booking);
     let date = new Date(booking.startTime);
     let formattedDate = moment(date).format("DD-MM-YY HH:mm");
     return <p key={index}>{formattedDate}</p>

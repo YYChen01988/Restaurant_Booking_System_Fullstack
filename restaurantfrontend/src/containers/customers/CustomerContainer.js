@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Request from '../../helpers/request'
 import CustomerList from './CustomerList.js';
 
 class CustomerContainer extends Component {
@@ -10,8 +11,8 @@ class CustomerContainer extends Component {
   }
 
   componentDidMount(){
-    fetch(this.url)
-    .then((res) => res.json())
+    const request = new Request();
+    request.get(this.url)
     .then((data) => {
       if(!data._embedded){
         this.setState({customers: [data]})

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import TableList from './TableList.js';
+import Request from '../../helpers/request'
 
 class TableContainer extends Component {
 
@@ -9,8 +10,8 @@ class TableContainer extends Component {
   }
 
   componentDidMount(){
-    fetch(this.props.url)
-    .then((res) => res.json())
+    const request = new Request();
+    request.get(this.props.url)
     .then((data) => {
       if(!data._embedded){
         this.setState({tables: [data]})

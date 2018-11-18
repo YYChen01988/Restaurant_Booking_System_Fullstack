@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
+import Request from '../../helpers/request';
 
 class EditBookingFormContainer extends Component {
   constructor(props){
@@ -22,11 +23,9 @@ class EditBookingFormContainer extends Component {
   }
 
   handleDelete(event){
+    const request = new Request();
     const url = "/bookings/" + this.state.bookings.id
-    fetch(url,{
-      method: 'DELETE',
-      headers: {'Content-Type': 'application/json'}
-    })
+    request.delete(url)
     .then(() => {
       window.location = "/bookings";
     })
