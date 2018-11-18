@@ -135,13 +135,13 @@ public class DataLoader implements ApplicationRunner {
 
         Booking booking1 = new Booking(customer1, 2, startTime1, endTime1, table1 );
         bookingRepository.save(booking1);
-        Booking booking2 = new Booking(customer2, 4, startTime2, endTime2, table4 );
+        Booking booking2 = new Booking(customer2, 4, startTime2, endTime2, table5 );
         bookingRepository.save(booking2);
-        Booking booking3 = new Booking(customer3, 2, startTime3, endTime3, table1 );
+        Booking booking3 = new Booking(customer3, 2, startTime3, endTime3, table2 );
         bookingRepository.save(booking3);
         Booking booking4 = new Booking(customer4, 8, startTime4, endTime4, table9 );
         bookingRepository.save(booking4);
-        Booking booking5 = new Booking(customer5, 2, startTime5, endTime5, table1 );
+        Booking booking5 = new Booking(customer5, 2, startTime5, endTime5, table3 );
         bookingRepository.save(booking5);
         Booking booking6 = new Booking(customer6, 2, startTime6, endTime6, table1 );
         bookingRepository.save(booking6);
@@ -151,8 +151,8 @@ public class DataLoader implements ApplicationRunner {
         bookingRepository.save(booking8);
         Booking booking9 = new Booking(customer1, 9, startTime8, endTime8, table10 );
         bookingRepository.save(booking9);
-        Booking booking10 = new Booking(customer1, 2, startTime9, endTime9,table2 );
-        bookingRepository.save(booking9);
+        Booking booking10 = new Booking(customer1, 2, startTime9, endTime9, table2 );
+        bookingRepository.save(booking10);
 
     }
 }

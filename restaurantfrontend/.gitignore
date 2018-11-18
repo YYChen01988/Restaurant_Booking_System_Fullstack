@@ -19,3 +19,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/src/containers/tables/TableDetail2.js
+src/components/tables/TableIndividual2.js

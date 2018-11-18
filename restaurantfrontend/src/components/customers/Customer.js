@@ -6,7 +6,7 @@ const Customer = (props) => {
     numberOfVisits = Object.keys(props.customer.bookings).length
   };
 
-  // const url = "/customers/" + props.customer.id
+  const url = "/customers/" + props.customer.id
   const editUrl = "/customers/" + props.customer.id + "/edit"
 
   return (
@@ -14,7 +14,7 @@ const Customer = (props) => {
       <td><a href={editUrl}>{props.customer.name}</a></td>
       <td>{props.customer.age}</td>
       <td>{props.customer.contact}</td>
-      <td>{numberOfVisits}</td>
+      <td><a href={url}>{numberOfVisits}</a></td>
     </tr>
   )
 }

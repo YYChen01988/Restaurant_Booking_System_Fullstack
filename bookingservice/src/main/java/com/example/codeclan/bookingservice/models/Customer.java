@@ -27,7 +27,6 @@ public class Customer {
     @OneToMany(mappedBy= "customer", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 
-//    private String comment;
 
 
     public Customer(String name, int age, String contact) {

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
+import Request from '../../helpers/request'
 
 class BookingFormContainer extends Component {
   constructor(props){
@@ -37,20 +38,18 @@ class BookingFormContainer extends Component {
   }
 
   componentDidMount(){
-    fetch('/bookings')
-    .then((res) => res.json())
+    const request = new Request();
+    request.get('/bookings')
     .then((data) => {
       this.setState({bookings: data._embedded.bookings})
     })
 
-    fetch('/customers')
-    .then((res) => res.json())
+    request.get('/customers')
     .then((data) => {
       this.setState({customers: data._embedded.customers})
     })
 
-    fetch('/tables')
-    .then((res) => res.json())
+    request.get('/tables')
     .then((data) => {
       this.setState({tables: data._embedded.tables, fullTableList: data._embedded.tables})
     })

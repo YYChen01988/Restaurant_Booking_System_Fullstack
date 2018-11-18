@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Request from '../../helpers/request'
 import CustomerIndividual from '../../components/customers/CustomerIndividual';
 
 class CustomerDetail extends Component {
@@ -11,8 +12,8 @@ class CustomerDetail extends Component {
   }
 
   componentDidMount(){
-    fetch(this.url)
-    .then((res) => res.json())
+    const request = new Request();
+    request.get(this.url)
     .then((customer) => {
       this.setState({customer: customer})
     })
