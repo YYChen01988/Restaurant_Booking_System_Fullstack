@@ -4,6 +4,23 @@
 
 You have been tasked to create a booking system for a brand new restaurant. The restaurant needs a way to book and arrange tables for customers who are booking over the phone. This system is for the staff to use.
 
+
+![Bookings Page](planning/bookings-page.png)
+
+## How to run the app 
+
+Download the repo and enter the following into the console whilst in the root directory: 
+
+```bash
+createdb bookingservice
+open -a IntelliJ\ IDEA\ CE bookingservice
+right click BookingServiceApplication in bookingservice/src/main/java/com/example/codeclan/bookingservice/BookingserviceApplication.java, click Run
+cd restaurantfrontend 
+npm i
+npm start
+```
+Open http://localhost:3000/ to view the homepage.
+
 ### MVP:
 
 Your system must be able to:
