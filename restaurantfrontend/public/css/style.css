@@ -218,6 +218,10 @@ table {
   border-collapse: collapse;
 }
 
+table tr:hover {
+  background-color: #ddd;
+}
+
 th, td {
   text-align: left;
   padding: 8px;
