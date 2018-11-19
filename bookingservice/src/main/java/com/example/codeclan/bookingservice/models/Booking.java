@@ -31,11 +31,12 @@ public class Booking {
     private Customer customer;
 
 
-    public Booking(Customer customer, int party, LocalDateTime startTime, LocalDateTime endTime, Table table) {
+    public Booking(Customer customer, int party, LocalDateTime startTime, Table table) {
         this.customer = customer;
         this.party = party;
         this.startTime = startTime;
-        this.endTime = endTime;
+        this.endTime = startTime.plusHours(2);
+//        this.endTime = endTime;
         this.table = table;
     }
 
