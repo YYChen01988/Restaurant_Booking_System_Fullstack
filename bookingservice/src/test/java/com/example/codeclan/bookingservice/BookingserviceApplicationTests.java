@@ -44,9 +44,9 @@ public class BookingserviceApplicationTests {
     public void setUp() throws Exception {
 
         LocalDateTime startTime1 = LocalDateTime.of(2018,10,19,16,30);
-        Customer customer1 = new Customer("Boaty McBoatface", 30, "boat@mcboatface.co.uk");
+        Customer customer1 = new Customer("Boaty McBoatface", 30, "boaty@mcboatface.co.uk");
         Table table1 = new Table(1, 1);
-        Booking booking1 = new Booking(customer1, 1, startTime1, endTime1, table1 );
+        Booking booking1 = new Booking(customer1, 1, startTime1, table1 );
     }
 
 //    @Test

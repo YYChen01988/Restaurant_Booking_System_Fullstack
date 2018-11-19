@@ -34,23 +34,23 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args){
 
         LocalDateTime startTime1 = LocalDateTime.of(2018,11,13,16,30);
-        LocalDateTime endTime1 = LocalDateTime.of(2018,11,13,18,30);
+//        LocalDateTime endTime1 = LocalDateTime.of(2018,11,13,18,30);
         LocalDateTime startTime2 = LocalDateTime.of(2018,11,14,16,30);
-        LocalDateTime endTime2 = LocalDateTime.of(2018,11,14,18,30);
+//        LocalDateTime endTime2 = LocalDateTime.of(2018,11,14,18,30);
         LocalDateTime startTime3 = LocalDateTime.of(2018,11,15,17,00);
-        LocalDateTime endTime3 = LocalDateTime.of(2018,11,15,19,00);
+//        LocalDateTime endTime3 = LocalDateTime.of(2018,11,15,19,00);
         LocalDateTime startTime4 = LocalDateTime.of(2018,11,15,19,00);
-        LocalDateTime endTime4 = LocalDateTime.of(2018,11,15,21,00);
+//        LocalDateTime endTime4 = LocalDateTime.of(2018,11,15,21,00);
         LocalDateTime startTime5 = LocalDateTime.of(2018,11,15,20,30);
-        LocalDateTime endTime5 = LocalDateTime.of(2018,11,15,22,30);
+//        LocalDateTime endTime5 = LocalDateTime.of(2018,11,15,22,30);
         LocalDateTime startTime6 = LocalDateTime.of(2018,11,15,21,00);
-        LocalDateTime endTime6 = LocalDateTime.of(2018,11,15,23,00);
+//        LocalDateTime endTime6 = LocalDateTime.of(2018,11,15,23,00);
         LocalDateTime startTime7 = LocalDateTime.of(2018,11,16,13,30);
-        LocalDateTime endTime7 = LocalDateTime.of(2018,11,16,15,30);
+//        LocalDateTime endTime7 = LocalDateTime.of(2018,11,16,15,30);
         LocalDateTime startTime8 = LocalDateTime.of(2018,11,16,14,00);
-        LocalDateTime endTime8 = LocalDateTime.of(2018,11,16,16,00);
+//        LocalDateTime endTime8 = LocalDateTime.of(2018,11,16,16,00);
         LocalDateTime startTime9 = LocalDateTime.of(2018,11,16,17,30);
-        LocalDateTime endTime9 = LocalDateTime.of(2018,11,16,19,30);
+//        LocalDateTime endTime9 = LocalDateTime.of(2018,11,16,19,30);
 
 
         Customer customer1 = new Customer("Boaty McBoatface", 30, "boaty@mcboatface.com");
@@ -133,25 +133,25 @@ public class DataLoader implements ApplicationRunner {
         Table table10 = new Table(10, 10);
         tableRepository.save(table10);
 
-        Booking booking1 = new Booking(customer1, 2, startTime1, endTime1, table1 );
+        Booking booking1 = new Booking(customer1, 2, startTime1, table1 );
         bookingRepository.save(booking1);
-        Booking booking2 = new Booking(customer2, 4, startTime2, endTime2, table5 );
+        Booking booking2 = new Booking(customer2, 4, startTime2, table5 );
         bookingRepository.save(booking2);
-        Booking booking3 = new Booking(customer3, 2, startTime3, endTime3, table2 );
+        Booking booking3 = new Booking(customer3, 2, startTime3, table2 );
         bookingRepository.save(booking3);
-        Booking booking4 = new Booking(customer4, 8, startTime4, endTime4, table9 );
+        Booking booking4 = new Booking(customer4, 8, startTime4, table9 );
         bookingRepository.save(booking4);
-        Booking booking5 = new Booking(customer5, 2, startTime5, endTime5, table3 );
+        Booking booking5 = new Booking(customer5, 2, startTime5, table3 );
         bookingRepository.save(booking5);
-        Booking booking6 = new Booking(customer6, 2, startTime6, endTime6, table1 );
+        Booking booking6 = new Booking(customer6, 2, startTime6, table1 );
         bookingRepository.save(booking6);
-        Booking booking7 = new Booking(customer7, 4, startTime7, endTime7, table4 );
+        Booking booking7 = new Booking(customer7, 4, startTime7, table4 );
         bookingRepository.save(booking7);
-        Booking booking8 = new Booking(customer8, 1, startTime8, endTime8, table1 );
+        Booking booking8 = new Booking(customer8, 1, startTime8, table1 );
         bookingRepository.save(booking8);
-        Booking booking9 = new Booking(customer1, 9, startTime8, endTime8, table10 );
+        Booking booking9 = new Booking(customer1, 9, startTime8, table10 );
         bookingRepository.save(booking9);
-        Booking booking10 = new Booking(customer1, 2, startTime9, endTime9, table2 );
+        Booking booking10 = new Booking(customer1, 2, startTime9, table2 );
         bookingRepository.save(booking10);
 
     }
