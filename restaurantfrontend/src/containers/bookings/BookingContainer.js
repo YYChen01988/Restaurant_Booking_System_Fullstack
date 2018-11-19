@@ -17,7 +17,7 @@ class BookingContainer extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(empty){
+  handleClick(){
     this.setState({startDate: null})
   }
 
